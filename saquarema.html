@@ -226,6 +226,113 @@
       </div>
     </section>
 
+    <!-- MAP SECTION -->
+    <section class="section map-section" id="mapa" style="background:var(--color-surface);border-top:1px solid var(--color-divider);">
+      <div class="container">
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:var(--space-6);flex-wrap:wrap;gap:var(--space-3);">
+          <div>
+            <span class="eyebrow">Mapa dos picos</span>
+            <h2 style="margin-top:.75rem;margin-bottom:0;">Onde surfar</h2>
+          </div>
+          <p style="color:var(--color-text-muted);max-width:46ch;margin:0;">Clique em um pico na lista para ver no mapa. Use o scroll para aproximar.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:.32fr 1fr;gap:var(--space-5);align-items:start;">
+          <div class="pico-list" style="display:grid;gap:var(--space-2);">
+                        <button class="pico-btn" data-lat="-22.93" data-lng="-42.5083" data-name="Itaúna" onclick="flyTo(-22.93,-42.5083,'Itaúna','Avançado','Beach break')">
+              <span class="pico-btn-name">Itaúna</span>
+              <span class="pico-btn-meta">Avançado · Beach break</span>
+            </button>
+            <button class="pico-btn" data-lat="-22.9133" data-lng="-42.4817" data-name="Barra Nova" onclick="flyTo(-22.9133,-42.4817,'Barra Nova','Intermediário','Beach break')">
+              <span class="pico-btn-name">Barra Nova</span>
+              <span class="pico-btn-meta">Intermediário · Beach break</span>
+            </button>
+            <button class="pico-btn" data-lat="-22.9017" data-lng="-42.4517" data-name="Jaconé" onclick="flyTo(-22.9017,-42.4517,'Jaconé','Intermediário','Beach break')">
+              <span class="pico-btn-name">Jaconé</span>
+              <span class="pico-btn-meta">Intermediário · Beach break</span>
+            </button>
+            <button class="pico-btn" data-lat="-22.9383" data-lng="-42.5367" data-name="Vilatur" onclick="flyTo(-22.9383,-42.5367,'Vilatur','Iniciante/Intermediário','Beach break')">
+              <span class="pico-btn-name">Vilatur</span>
+              <span class="pico-btn-meta">Iniciante/Intermediário · Beach break</span>
+            </button>
+          </div>
+          <div style="position:relative;border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-md);border:1px solid var(--color-border);">
+            <div id="mare-map" style="width:100%;height:460px;background:var(--color-surface-offset);"></div>
+            <div id="map-popup" style="display:none;position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:.75rem 1.25rem;box-shadow:var(--shadow-md);white-space:nowrap;z-index:10;">
+              <strong id="popup-name" style="display:block;"></strong>
+              <span id="popup-meta" style="font-size:var(--text-xs);color:var(--color-text-muted);"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .pico-btn{display:flex;flex-direction:column;width:100%;text-align:left;padding:var(--space-3) var(--space-4);border-radius:var(--radius-lg);background:var(--color-surface-2);border:1px solid var(--color-border);cursor:pointer;transition:all var(--transition);}
+      .pico-btn:hover,.pico-btn.active{background:var(--color-primary);border-color:var(--color-primary);}
+      .pico-btn:hover .pico-btn-name,.pico-btn.active .pico-btn-name{color:white;}
+      .pico-btn:hover .pico-btn-meta,.pico-btn.active .pico-btn-meta{color:rgba(255,255,255,.75);}
+      .pico-btn-name{font-weight:700;font-size:var(--text-sm);color:var(--color-text);}
+      .pico-btn-meta{font-size:var(--text-xs);color:var(--color-text-muted);margin-top:.2rem;}
+      @media(max-width:780px){
+        #mare-map{height:320px;}
+        [style*="grid-template-columns:.32fr"]{grid-template-columns:1fr!important;}
+        .pico-list{grid-template-columns:1fr 1fr;}
+      }
+    </style>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"><\/script>
+    <script>
+    (function(){
+      var picos = [
+          {name:"Itaúna",lat:-22.93,lng:-42.5083,nivel:"Avançado",tipo:"Beach break"},
+          {name:"Barra Nova",lat:-22.9133,lng:-42.4817,nivel:"Intermediário",tipo:"Beach break"},
+          {name:"Jaconé",lat:-22.9017,lng:-42.4517,nivel:"Intermediário",tipo:"Beach break"},
+          {name:"Vilatur",lat:-22.9383,lng:-42.5367,nivel:"Iniciante/Intermediário",tipo:"Beach break"}
+      ];
+      var mapEl = document.getElementById('mare-map');
+      if(!mapEl) return;
+      var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      var tileLight = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+      var tileDark  = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
+      var map = L.map('mare-map', {zoomControl:true,scrollWheelZoom:false}).setView([-22.9217,-42.51],12);
+      var tileLayer = L.tileLayer(isDark ? tileDark : tileLight, {
+        attribution:'© <a href="https://carto.com">CARTO</a>',
+        subdomains:'abcd', maxZoom:19
+      }).addTo(map);
+
+      var svgIcon = function(color){
+        return L.divIcon({
+          html:'<svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 0C6.268 0 0 6.268 0 14c0 9.333 14 22 14 22S28 23.333 28 14C28 6.268 21.732 0 14 0z" fill="'+color+'"/><circle cx="14" cy="14" r="5" fill="white"/></svg>',
+          iconSize:[28,36], iconAnchor:[14,36], popupAnchor:[0,-36],
+          className:''
+        });
+      };
+
+      var markers = [];
+      picos.forEach(function(p, i){
+        var m = L.marker([p.lat, p.lng], {icon:svgIcon('#0B4D6B')}).addTo(map);
+        m.bindTooltip('<strong>'+p.name+'</strong><br><span style="font-size:12px;color:#4f6b79">'+p.nivel+' · '+p.tipo+'</span>', {direction:'top',offset:[0,-32]});
+        markers.push(m);
+      });
+
+      window.flyTo = function(lat, lng, name, nivel, tipo){
+        map.flyTo([lat,lng], 14, {duration:1.2});
+        document.querySelectorAll('.pico-btn').forEach(function(b){b.classList.remove('active');});
+        event.currentTarget.classList.add('active');
+        var popup = document.getElementById('map-popup');
+        document.getElementById('popup-name').textContent = name;
+        document.getElementById('popup-meta').textContent = nivel + ' · ' + tipo;
+        popup.style.display = 'block';
+      };
+
+      // Sync tile on theme toggle
+      document.querySelector('[data-theme-toggle]').addEventListener('click', function(){
+        var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        tileLayer.setUrl(dark ? tileDark : tileLight);
+      });
+    })();
+    <\/script>
     <section class="section" style="background:var(--color-surface);border-top:1px solid var(--color-divider);">
       <div class="container">
         <h2 style="margin-bottom:var(--space-6);">Outros destinos</h2>
