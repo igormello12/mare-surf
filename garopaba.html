@@ -190,13 +190,15 @@
 
         <div class="content-layout">
           <div class="prose">
-            <h2>Por que Garopaba?</h2>
-            <p>Uma base com ar de vila costeira, para quem busca paisagem forte e uma experiência menos acelerada. A escolha faz sentido para quem quer uma trip com identidade própria, longe dos roteiros mais óbvios — mas sem abrir mão de contexto e segurança na hora de planejar.</p>
-            <p>O ritmo do destino é o que define a experiência. Você pode chegar com um plano fixo ou deixar a maré ditar os dias — em ambos os casos, Garopaba tem o que precisa para funcionar como base de uma surf trip de qualidade.</p>
-            <div class="quote">"O melhor pico é o que encaixa com o seu ritmo de viagem — não só com o seu nível de surf."</div>
-            <h2>Como aproveitar melhor</h2>
-            <p>Reserve pelo menos 4 a 5 dias para sentir o destino de verdade. Os dois primeiros tendem a ser de ambientação — descobrir qual praia encaixa com o seu estilo, entender os ventos locais e calibrar as expectativas. O terceiro dia em diante é quando a trip começa a fluir.</p>
-            <p>Fique de olho na previsão de swell e vento local. Em Garopaba, pequenas variações de direção de vento mudam muito a qualidade da onda dependendo do pico escolhido.</p>
+                        <h2>Por que Garopaba?</h2>
+            <p>Garopaba tem aquele raro equilíbrio de destino que ainda não virou produto. É conhecida entre surfistas, tem boa infraestrutura de vila costeira, mas preserva um ritmo de vida que as cidades maiores perderam faz tempo. Você chega e sente vontade de ficar mais do que planejou.</p>
+            <p>Fica a uma hora e meia de Florianópolis e é frequentemente usada como extensão de uma trip mais longa pela costa catarinense. Mas quem vai só para Garopaba entende rápido que ela não precisa dividir atenção com ninguém.</p>
+            <div class="quote">"Garopaba não precisa de hype. Ela fala por si mesma."</div>
+            <h2>Os picos</h2>
+            <p>Garopaba town é o pico central — beach break exposto ao swell sul, com boa qualidade nos dias de ondulação consistente. Ferrugem fica logo ao lado e tem fama consolidada entre os surfistas locais, com ondas que funcionam bem em diferentes condições de vento e maré.</p>
+            <p>Rosa do Sul, um pouco mais ao sul, é para quem quer fugir do movimento e surfa melhor em condições mais desafiadoras. Verão tem bastante gente; outono e inverno entregam as melhores ondas com menos crowd.</p>
+            <h2>Como organizar a trip</h2>
+            <p>O centro de Garopaba é pequeno e fácil de navegar a pé ou de bicicleta. Pousadas pequenas com boa localização são abundantes. Para explorar as praias ao redor é bom ter carro, mas para uma trip focada nos picos principais dá para passar bem sem um.</p>
           </div>
           <aside class="sidebar" aria-label="Informações rápidas">
             <div class="sidebar-card">
@@ -276,6 +278,11 @@
         toggle.setAttribute('aria-label','Alternar para modo '+(mode==='dark'?'claro':'escuro'));
       }
       setIcon();
+
+      // Newsletter form
+      var form=document.getElementById('newsletter-form');
+      var success=document.getElementById('newsletter-success');
+      if(form){form.addEventListener('submit',function(e){e.preventDefault();var email=form.querySelector('input[type="email"]').value;if(email&&email.includes('@')){form.style.display='none';success.style.display='block';}});}
       toggle.addEventListener('click',function(){mode=mode==='dark'?'light':'dark';root.setAttribute('data-theme',mode);setIcon();});
     })();
   </script>
