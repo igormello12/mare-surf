@@ -190,13 +190,15 @@
 
         <div class="content-layout">
           <div class="prose">
-            <h2>Por que Itacaré?</h2>
-            <p>Água morna, vegetação intensa e clima de viagem com energia leve — boa para dias mais contemplativos. A escolha faz sentido para quem quer uma trip com identidade própria, longe dos roteiros mais óbvios — mas sem abrir mão de contexto e segurança na hora de planejar.</p>
-            <p>O ritmo do destino é o que define a experiência. Você pode chegar com um plano fixo ou deixar a maré ditar os dias — em ambos os casos, Itacaré tem o que precisa para funcionar como base de uma surf trip de qualidade.</p>
-            <div class="quote">"O melhor pico é o que encaixa com o seu ritmo de viagem — não só com o seu nível de surf."</div>
-            <h2>Como aproveitar melhor</h2>
-            <p>Reserve pelo menos 4 a 5 dias para sentir o destino de verdade. Os dois primeiros tendem a ser de ambientação — descobrir qual praia encaixa com o seu estilo, entender os ventos locais e calibrar as expectativas. O terceiro dia em diante é quando a trip começa a fluir.</p>
-            <p>Fique de olho na previsão de swell e vento local. Em Itacaré, pequenas variações de direção de vento mudam muito a qualidade da onda dependendo do pico escolhido.</p>
+                        <h2>Por que Itacaré?</h2>
+            <p>Itacaré é um daqueles destinos que você visita sem grandes expectativas e que acaba ficando na cabeça por muito tempo. É baiana do jeito mais completo: quente, verde, devagar e com aquele mar que parece ter temperatura perfeita o ano inteiro.</p>
+            <p>O roteiro típico por lá não começa na praia. Começa em trilha — muitas das melhores praias de Itacaré só são acessíveis a pé, o que cria um ritual de descoberta que faz parte da experiência. Você trabalha um pouco para chegar, e a onda recompensa.</p>
+            <div class="quote">"Itacaré ensina que o caminho até a onda faz parte do surf."</div>
+            <h2>Os picos</h2>
+            <p>Prainha e Tiririca são os mais acessíveis e ficam a poucos minutos do centro. Costumam funcionar bem com swell do Atlântico Sul e são bons para calibrar a trip antes de explorar mais. Para quem quer mais qualidade e está disposto a caminhar, Engenhoca e Jeribucaçu são os destaques — ondas mais longas, menos gente.</p>
+            <p>O melhor período é de setembro a fevereiro, quando o swell sul entra com mais regularidade e a temperatura da água fica entre 26°C e 28°C. É possível surfar o ano inteiro, mas essa janela entrega a combinação mais completa.</p>
+            <h2>Como organizar a trip</h2>
+            <p>O centro de Itacaré é compacto e a maioria das pousadas fica a poucos minutos das praias principais. Para as trilhas mais longas, vale sair cedo — calor e chuvas do fim de tarde são frequentes. Leve protetor solar, roupa leve e bastante água.</p>
           </div>
           <aside class="sidebar" aria-label="Informações rápidas">
             <div class="sidebar-card">
@@ -276,6 +278,11 @@
         toggle.setAttribute('aria-label','Alternar para modo '+(mode==='dark'?'claro':'escuro'));
       }
       setIcon();
+
+      // Newsletter form
+      var form=document.getElementById('newsletter-form');
+      var success=document.getElementById('newsletter-success');
+      if(form){form.addEventListener('submit',function(e){e.preventDefault();var email=form.querySelector('input[type="email"]').value;if(email&&email.includes('@')){form.style.display='none';success.style.display='block';}});}
       toggle.addEventListener('click',function(){mode=mode==='dark'?'light':'dark';root.setAttribute('data-theme',mode);setIcon();});
     })();
   </script>
