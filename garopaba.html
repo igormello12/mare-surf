@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Garopaba — Maré</title>
+  <meta name="description" content="Uma base com ar de vila costeira, para quem busca paisagem forte e uma experiência menos acelerada." />
+  <meta property="og:title" content="Garopaba — Maré" />
+  <meta property="og:description" content="Uma base com ar de vila costeira, para quem busca paisagem forte e uma experiência menos acelerada." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root,[data-theme="light"]{
+      --text-xs:clamp(0.75rem,0.7rem + 0.25vw,0.875rem);--text-sm:clamp(0.875rem,0.8rem + 0.35vw,1rem);
+      --text-base:clamp(1rem,0.95rem + 0.25vw,1.125rem);--text-lg:clamp(1.125rem,1rem + 0.75vw,1.5rem);
+      --text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);--text-2xl:clamp(2rem,1.2rem + 2.5vw,3.8rem);
+      --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.25rem;--space-6:1.5rem;
+      --space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;
+      --color-bg:#E8F4F8;--color-surface:#f4fbfd;--color-surface-2:#ffffff;--color-surface-offset:#dceff3;
+      --color-border:rgba(11,77,107,.14);--color-divider:rgba(11,77,107,.10);
+      --color-text:#123042;--color-text-muted:#4f6b79;--color-text-faint:#7d99a6;--color-text-inverse:#f6fbfc;
+      --color-primary:#0B4D6B;--color-primary-hover:#083c54;--color-secondary:#1A8FA0;
+      --color-success:#5DCAA5;--color-accent:#EF9F27;
+      --radius-sm:.4rem;--radius-md:.75rem;--radius-lg:1.25rem;--radius-xl:1.75rem;--radius-full:999px;
+      --shadow-sm:0 2px 10px rgba(11,77,107,.06);--shadow-md:0 16px 40px rgba(11,77,107,.10);
+      --content-default:1120px;--font-display:'Playfair Display',Georgia,serif;--font-body:'DM Sans',Arial,sans-serif;
+      --transition:180ms cubic-bezier(0.16,1,0.3,1);
+    }
+    [data-theme="dark"]{
+      --color-bg:#0d2230;--color-surface:#112b3b;--color-surface-2:#153547;--color-surface-offset:#193f54;
+      --color-border:rgba(232,244,248,.12);--color-divider:rgba(232,244,248,.08);
+      --color-text:#eaf5f8;--color-text-muted:#b8d1d8;--color-text-faint:#86aab5;--color-text-inverse:#082131;
+      --color-primary:#5ab3c0;--color-primary-hover:#78c7d1;--color-secondary:#5DCAA5;--color-accent:#f4b550;
+      --shadow-sm:0 2px 10px rgba(0,0,0,.22);--shadow-md:0 16px 40px rgba(0,0,0,.28);
+    }
+    @media(prefers-color-scheme:dark){:root:not([data-theme]){
+      --color-bg:#0d2230;--color-surface:#112b3b;--color-surface-2:#153547;--color-surface-offset:#193f54;
+      --color-border:rgba(232,244,248,.12);--color-divider:rgba(232,244,248,.08);
+      --color-text:#eaf5f8;--color-text-muted:#b8d1d8;--color-text-faint:#86aab5;--color-text-inverse:#082131;
+      --color-primary:#5ab3c0;--color-primary-hover:#78c7d1;--color-secondary:#5DCAA5;--color-accent:#f4b550;
+      --shadow-sm:0 2px 10px rgba(0,0,0,.22);--shadow-md:0 16px 40px rgba(0,0,0,.28);
+    }}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+    body{font-family:var(--font-body);font-size:var(--text-base);background:var(--color-bg);color:var(--color-text);line-height:1.6;min-height:100dvh;}
+    img,svg{display:block;max-width:100%;height:auto;}
+    a{color:inherit;text-decoration:none;transition:color var(--transition);}
+    button{font:inherit;border:none;background:none;color:inherit;cursor:pointer;}
+    h1,h2,h3{font-family:var(--font-display);line-height:1.08;text-wrap:balance;}
+    h1{font-size:var(--text-2xl);}
+    h2{font-size:var(--text-xl);margin-bottom:var(--space-4);}
+    h3{font-size:var(--text-lg);margin-bottom:var(--space-2);}
+    p{text-wrap:pretty;}
+    :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm);}
+    .skip-link{position:absolute;left:-9999px;}
+    .skip-link:focus{left:1rem;top:1rem;background:var(--color-surface-2);padding:.75rem 1rem;z-index:1000;border-radius:var(--radius-md);}
+    .container{width:min(calc(100% - 2rem),var(--content-default));margin:0 auto;}
+    /* HEADER */
+    .site-header{position:sticky;top:0;z-index:20;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);background:color-mix(in srgb,var(--color-bg) 80%,transparent);border-bottom:1px solid var(--color-divider);}
+    .header-row{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);padding:var(--space-3) 0;}
+    .brand{display:flex;align-items:center;gap:.8rem;}
+    .brand-mark{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--color-primary),var(--color-secondary));display:grid;place-items:center;flex-shrink:0;}
+    .brand-mark svg{width:22px;height:22px;color:white;}
+    .brand-name{font-family:var(--font-display);font-size:1.45rem;line-height:1;}
+    .brand-tag{font-size:var(--text-xs);color:var(--color-text-muted);}
+    nav ul{list-style:none;display:flex;gap:var(--space-5);flex-wrap:wrap;}
+    nav a{font-size:var(--text-sm);color:var(--color-text-muted);}
+    nav a:hover{color:var(--color-primary);}
+    .header-actions{display:flex;align-items:center;gap:.75rem;}
+    .theme-toggle{min-width:44px;min-height:44px;border-radius:var(--radius-full);border:1px solid var(--color-border);background:var(--color-surface-2);padding:.75rem;display:grid;place-items:center;}
+    .theme-toggle:hover{background:var(--color-surface-offset);}
+    .nav-back{min-height:44px;padding:.75rem 1.15rem;border-radius:var(--radius-full);border:1px solid var(--color-border);background:var(--color-surface-2);font-size:var(--text-sm);display:inline-flex;align-items:center;gap:.5rem;}
+    .nav-back:hover{background:var(--color-surface-offset);}
+    /* HERO */
+    .dest-hero{position:relative;min-height:480px;display:flex;align-items:flex-end;overflow:hidden;border-radius:0 0 var(--radius-xl) var(--radius-xl);margin-bottom:var(--space-10);}
+    .dest-hero-img{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0;}
+    .dest-hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,77,107,.18) 0%,rgba(11,77,107,.72) 100%);}
+    .dest-hero-content{position:relative;z-index:1;padding:var(--space-10) var(--space-6) var(--space-8);width:100%;color:white;}
+    .dest-hero-content .eyebrow{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.15);color:white;margin-bottom:var(--space-4);}
+    .dest-hero-content h1{color:white;max-width:18ch;}
+    .dest-hero-content .state{font-size:var(--text-sm);opacity:.8;margin-top:var(--space-2);}
+    /* UTILS */
+    .eyebrow{display:inline-flex;gap:.5rem;align-items:center;padding:.4rem .8rem;border-radius:var(--radius-full);background:var(--color-surface);border:1px solid var(--color-border);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.08em;color:var(--color-primary);}
+    .pill{font-size:var(--text-xs);padding:.3rem .65rem;border-radius:var(--radius-full);background:color-mix(in srgb,var(--color-secondary) 12%,var(--color-surface));color:var(--color-primary);}
+    .pill-row{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:var(--space-4);}
+    .section{padding:clamp(2.5rem,5vw,4.5rem) 0;}
+    /* DETAIL GRID */
+    .detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4);margin-bottom:var(--space-8);}
+    .detail-box{background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-4);}
+    .detail-box strong{display:block;margin-bottom:var(--space-1);color:var(--color-primary);font-size:var(--text-sm);}
+    .detail-box span{font-size:var(--text-sm);color:var(--color-text-muted);}
+    /* CONTENT LAYOUT */
+    .content-layout{display:grid;grid-template-columns:1fr .42fr;gap:var(--space-8);align-items:start;}
+    .prose p{color:var(--color-text-muted);margin-bottom:var(--space-4);max-width:68ch;}
+    .prose h2{margin-top:var(--space-8);margin-bottom:var(--space-3);}
+    .quote{padding:var(--space-6);border-left:3px solid var(--color-accent);background:color-mix(in srgb,var(--color-accent) 8%,var(--color-surface-2));border-radius:0 var(--radius-lg) var(--radius-lg) 0;font-family:var(--font-display);font-size:var(--text-lg);line-height:1.45;color:var(--color-text);font-style:italic;margin:var(--space-8) 0;}
+    /* SIDEBAR */
+    .sidebar{display:grid;gap:var(--space-4);position:sticky;top:calc(64px + var(--space-4));}
+    .sidebar-card{background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-5);box-shadow:var(--shadow-sm);}
+    .sidebar-card h3{margin-bottom:var(--space-3);}
+    .sidebar-list{list-style:none;display:grid;gap:var(--space-2);}
+    .sidebar-list li{font-size:var(--text-sm);color:var(--color-text-muted);padding:var(--space-2) 0;border-bottom:1px solid var(--color-divider);display:flex;gap:.5rem;align-items:flex-start;}
+    .sidebar-list li:last-child{border-bottom:none;}
+    .sidebar-list li::before{content:'→';color:var(--color-secondary);flex-shrink:0;}
+    .btn-full{display:flex;align-items:center;justify-content:center;width:100%;min-height:48px;padding:.9rem 1.25rem;border-radius:var(--radius-full);font-size:var(--text-sm);font-family:var(--font-body);background:var(--color-primary);color:var(--color-text-inverse);margin-top:var(--space-4);transition:background var(--transition),transform var(--transition);}
+    .btn-full:hover{background:var(--color-primary-hover);transform:translateY(-1px);}
+    /* MORE DESTINATIONS */
+    .more-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-4);}
+    .more-card{background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-sm);transition:box-shadow var(--transition),transform var(--transition);}
+    .more-card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px);}
+    .more-card-img{aspect-ratio:4/3;background-size:cover;background-position:center;}
+    .more-card-body{padding:var(--space-4);}
+    .more-card-body h3{font-size:var(--text-base);margin-bottom:.25rem;}
+    .more-card-body p{font-size:var(--text-xs);color:var(--color-text-muted);}
+    /* FOOTER */
+    .footer{padding:var(--space-10) 0 var(--space-16);border-top:1px solid var(--color-divider);margin-top:var(--space-10);}
+    .footer-row{display:flex;justify-content:space-between;gap:var(--space-6);flex-wrap:wrap;}
+    .footer p{color:var(--color-text-muted);margin-top:var(--space-2);max-width:42ch;}
+    @media(max-width:980px){
+      .content-layout{grid-template-columns:1fr;}
+      .detail-grid{grid-template-columns:repeat(2,1fr);}
+      .more-grid{grid-template-columns:repeat(2,1fr);}
+      .sidebar{position:static;}
+    }
+    @media(max-width:640px){
+      .detail-grid{grid-template-columns:1fr 1fr;}
+      .more-grid{grid-template-columns:1fr 1fr;}
+      .header-row{flex-wrap:wrap;}
+      .dest-hero{min-height:360px;}
+      .footer-row{flex-direction:column;}
+    }
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important;}html{scroll-behavior:auto;}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="index.html" aria-label="Maré — página inicial">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9">
+            <path d="M3 14c2.2 0 2.2-2 4.4-2s2.2 2 4.4 2 2.2-2 4.4-2 2.2 2 4.4 2"/>
+            <path d="M5 10c1.8 0 1.8-1.5 3.6-1.5S12.2 10 14 10s1.8-1.5 3.6-1.5S19.4 10 21.2 10"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-name">Maré</div>
+          <div class="brand-tag">No seu ritmo.</div>
+        </div>
+      </a>
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="index.html#destinos">Destinos</a></li>
+          <li><a href="index.html#sobre">Curadoria</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Alternar tema">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a class="nav-back" href="index.html">← Todos os destinos</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <div class="dest-hero">
+      <div class="dest-hero-img" style="background-image:url(https://picsum.photos/seed/garopaba-southern/1600/900);" role="img" aria-label="Paisagem de Garopaba"></div>
+      <div class="container dest-hero-content">
+        <span class="eyebrow">Santa Catarina — SC</span>
+        <h1>Garopaba</h1>
+        <p class="state">Uma base com ar de vila costeira, para quem busca paisagem forte e uma experiência menos acelerada.</p>
+      </div>
+    </div>
+
+    <section class="section" id="conteudo-destino">
+      <div class="container">
+        <div class="pill-row">
+          <span class="pill">Sul</span><span class="pill">Ritmo calmo</span><span class="pill">Vila costeira</span><span class="pill">Paisagem forte</span>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-box"><strong>Vibe geral</strong><span>Tranquila, com ares de fim de mundo agradável.</span></div>
+          <div class="detail-box"><strong>Melhor para</strong><span>Quem quer desacelerar sem abrir mão do surf.</span></div>
+          <div class="detail-box"><strong>Ritmo</strong><span>Passeios lentos, pôr do sol na praia, onda no amanhecer.</span></div>
+          <div class="detail-box"><strong>Sensação</strong><span>Destino que convida a ficar mais tempo que o planejado.</span></div>
+          <div class="detail-box"><strong>Melhor época</strong><span>Dezembro a março e maio a julho.</span></div>
+          <div class="detail-box"><strong>Acesso</strong><span>1h30 de Florianópolis de carro.</span></div>
+        </div>
+
+        <div class="content-layout">
+          <div class="prose">
+            <h2>Por que Garopaba?</h2>
+            <p>Uma base com ar de vila costeira, para quem busca paisagem forte e uma experiência menos acelerada. A escolha faz sentido para quem quer uma trip com identidade própria, longe dos roteiros mais óbvios — mas sem abrir mão de contexto e segurança na hora de planejar.</p>
+            <p>O ritmo do destino é o que define a experiência. Você pode chegar com um plano fixo ou deixar a maré ditar os dias — em ambos os casos, Garopaba tem o que precisa para funcionar como base de uma surf trip de qualidade.</p>
+            <div class="quote">"O melhor pico é o que encaixa com o seu ritmo de viagem — não só com o seu nível de surf."</div>
+            <h2>Como aproveitar melhor</h2>
+            <p>Reserve pelo menos 4 a 5 dias para sentir o destino de verdade. Os dois primeiros tendem a ser de ambientação — descobrir qual praia encaixa com o seu estilo, entender os ventos locais e calibrar as expectativas. O terceiro dia em diante é quando a trip começa a fluir.</p>
+            <p>Fique de olho na previsão de swell e vento local. Em Garopaba, pequenas variações de direção de vento mudam muito a qualidade da onda dependendo do pico escolhido.</p>
+          </div>
+          <aside class="sidebar" aria-label="Informações rápidas">
+            <div class="sidebar-card">
+              <h3>Na mala</h3>
+              <ul class="sidebar-list">
+                <li>Protetor solar fator 70+</li>
+                <li>Roupa de wetsuit leve (se for ao Sul)</li>
+                <li>Prancha reserva ou quilha extra</li>
+                <li>Repelente para o fim do dia</li>
+                <li>Dinheiro em espécie para feiras e barracas</li>
+              </ul>
+            </div>
+            <div class="sidebar-card">
+              <h3>Dicas rápidas</h3>
+              <ul class="sidebar-list">
+                <li>Chegue cedo: picos lotam após as 9h nos fins de semana</li>
+                <li>Alugue carro ou moto para explorar praias remotas</li>
+                <li>Converse com surfistas locais — as dicas mais honestas</li>
+                <li>Verifique a previsão de maré antes de sair</li>
+              </ul>
+            </div>
+            <a class="btn-full" href="index.html#destinos">Ver todos os destinos</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:var(--color-surface);border-top:1px solid var(--color-divider);">
+      <div class="container">
+        <h2 style="margin-bottom:var(--space-6);">Outros destinos</h2>
+        <div class="more-grid">
+          <a class="more-card" href="florianopolis.html">
+            <div class="more-card-img" style="background-image:linear-gradient(rgba(11,77,107,.15),rgba(11,77,107,.3)),url(https://picsum.photos/seed/floripa-waves/600/450);" role="img" aria-label="Florianópolis"></div>
+            <div class="more-card-body"><h3>Florianópolis</h3><p>Versátil · SC</p></div>
+          </a>
+          <a class="more-card" href="ubatuba.html">
+            <div class="more-card-img" style="background-image:linear-gradient(rgba(11,77,107,.15),rgba(11,77,107,.3)),url(https://picsum.photos/seed/ubatuba-coast/600/450);" role="img" aria-label="Ubatuba"></div>
+            <div class="more-card-body"><h3>Ubatuba</h3><p>Roots · SP</p></div>
+          </a>
+          <a class="more-card" href="itacare.html">
+            <div class="more-card-img" style="background-image:linear-gradient(rgba(11,77,107,.15),rgba(11,77,107,.3)),url(https://picsum.photos/seed/itacare-tropical/600/450);" role="img" aria-label="Itacaré"></div>
+            <div class="more-card-body"><h3>Itacaré</h3><p>Tropical · BA</p></div>
+          </a>
+          <a class="more-card" href="garopaba.html">
+            <div class="more-card-img" style="background-image:linear-gradient(rgba(11,77,107,.15),rgba(11,77,107,.3)),url(https://picsum.photos/seed/garopaba-beach/600/450);" role="img" aria-label="Garopaba"></div>
+            <div class="more-card-body"><h3>Garopaba</h3><p>Calmo · SC</p></div>
+          </a>
+          <a class="more-card" href="saquarema.html">
+            <div class="more-card-img" style="background-image:linear-gradient(rgba(11,77,107,.15),rgba(11,77,107,.3)),url(https://picsum.photos/seed/saquarema-surf/600/450);" role="img" aria-label="Saquarema"></div>
+            <div class="more-card-body"><h3>Saquarema</h3><p>Performance · RJ</p></div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <div>
+        <div class="brand-name" style="font-family:var(--font-display);font-size:1.8rem;">Maré</div>
+        <p>Curadoria de surf travel no Brasil, feita para escolher a próxima trip sem pressa.</p>
+      </div>
+      <p style="color:var(--color-text-muted);font-size:var(--text-sm);">🐾 Tatui aprova rotas com areia, mar e vento no ponto certo.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var root=document.documentElement;
+      var toggle=document.querySelector('[data-theme-toggle]');
+      var mode=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+      root.setAttribute('data-theme',mode);
+      function setIcon(){
+        toggle.innerHTML=mode==='dark'
+          ?'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+          :'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+        toggle.setAttribute('aria-label','Alternar para modo '+(mode==='dark'?'claro':'escuro'));
+      }
+      setIcon();
+      toggle.addEventListener('click',function(){mode=mode==='dark'?'light':'dark';root.setAttribute('data-theme',mode);setIcon();});
+    })();
+  </script>
+</body>
+</html>
