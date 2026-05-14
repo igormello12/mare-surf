@@ -355,6 +355,24 @@
       </div>
     </section>
 
+  
+    <section class="section" id="newsletter" style="background:linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color:white;">
+      <div class="container" style="display:grid; grid-template-columns:1.1fr .9fr; gap:var(--space-8); align-items:center;">
+        <div>
+          <span class="eyebrow" style="background:rgba(255,255,255,.14); border-color:rgba(255,255,255,.2); color:white;">Newsletter Maré</span>
+          <h2 style="margin-top:1rem; color:white;">Receba novas surf trips antes de todo mundo</h2>
+          <p style="color:rgba(255,255,255,.82); max-width:52ch;">Curadoria de destinos, melhores épocas, ideias de roteiro e novidades da Maré direto no seu e-mail.</p>
+        </div>
+        <div style="background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); border-radius:var(--radius-xl); padding:var(--space-6); backdrop-filter: blur(8px);">
+          <form id="newsletter-home" style="display:grid; gap:var(--space-3);">
+            <input type="email" placeholder="seu@email.com" required style="width:100%; min-height:48px; border:none; border-radius:999px; padding:0 1rem; font:inherit; background:white; color:#123042;">
+            <button type="submit" class="btn" style="background:white; color:var(--color-primary); font-weight:700;">Quero receber 🌊</button>
+          </form>
+          <p id="newsletter-home-success" style="display:none; margin-top:1rem; color:white; font-size:var(--text-sm);">🎉 Perfeito. Você entrou na lista da Maré.</p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
@@ -382,6 +400,20 @@
         toggle.setAttribute('aria-label', 'Alternar para modo ' + (mode === 'dark' ? 'claro' : 'escuro'));
       }
       setIcon();
+
+      var newsletterHome = document.getElementById('newsletter-home');
+      var newsletterHomeSuccess = document.getElementById('newsletter-home-success');
+      if(newsletterHome){
+        newsletterHome.addEventListener('submit', function(e){
+          e.preventDefault();
+          var email = newsletterHome.querySelector('input[type="email"]').value;
+          if(email && email.includes('@')){
+            newsletterHome.style.display = 'none';
+            newsletterHomeSuccess.style.display = 'block';
+          }
+        });
+      }
+
       toggle.addEventListener('click', function() {
         mode = mode === 'dark' ? 'light' : 'dark';
         root.setAttribute('data-theme', mode);
