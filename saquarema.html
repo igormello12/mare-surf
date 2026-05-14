@@ -190,13 +190,15 @@
 
         <div class="content-layout">
           <div class="prose">
-            <h2>Por que Saquarema?</h2>
-            <p>Referência nacional para quem pensa em onda com mais energia e em uma cultura de surf muito presente. A escolha faz sentido para quem quer uma trip com identidade própria, longe dos roteiros mais óbvios — mas sem abrir mão de contexto e segurança na hora de planejar.</p>
-            <p>O ritmo do destino é o que define a experiência. Você pode chegar com um plano fixo ou deixar a maré ditar os dias — em ambos os casos, Saquarema tem o que precisa para funcionar como base de uma surf trip de qualidade.</p>
-            <div class="quote">"O melhor pico é o que encaixa com o seu ritmo de viagem — não só com o seu nível de surf."</div>
-            <h2>Como aproveitar melhor</h2>
-            <p>Reserve pelo menos 4 a 5 dias para sentir o destino de verdade. Os dois primeiros tendem a ser de ambientação — descobrir qual praia encaixa com o seu estilo, entender os ventos locais e calibrar as expectativas. O terceiro dia em diante é quando a trip começa a fluir.</p>
-            <p>Fique de olho na previsão de swell e vento local. Em Saquarema, pequenas variações de direção de vento mudam muito a qualidade da onda dependendo do pico escolhido.</p>
+                        <h2>Por que Saquarema?</h2>
+            <p>Saquarema não é um destino de surf — ela é a referência. Capital brasileira do surfe, sede do principal evento do CT no país, berço de gerações de surfistas profissionais. Quando você chega lá, sente o peso positivo dessa tradição.</p>
+            <p>Isso muda o ambiente de um jeito palpável. Os locais surfam bem, o respeito pela etiqueta na água é mais rígido do que em outros picos, e a qualidade das ondas justifica tudo isso. Saquarema não é o destino para quem quer relaxar — é o destino para quem quer surfar de verdade.</p>
+            <div class="quote">"Em Saquarema, a onda cobra o que você tem. E devolve em dobro."</div>
+            <h2>Os picos</h2>
+            <p>Itaúna é o coração do surf em Saquarema — a onda que recebe o WSL e que já foi palco de algumas das performances mais memoráveis do surf brasileiro. Poderosa, oca e exigente. Não é para todo mundo, mas para quem está pronto, é uma das melhores experiências que o litoral brasileiro oferece.</p>
+            <p>Barra Nova e Jaconé são alternativas mais acessíveis, com ondas de qualidade em dias de swell menor. Boas pedidas para aquecer antes de tentar Itaúna ou para dias em que o mar está grande demais no pico principal.</p>
+            <h2>Como organizar a trip</h2>
+            <p>Saquarema fica a duas horas do Rio de Janeiro pela BR-101. A infraestrutura turística é mais simples do que em Floripa ou Ubatuba — o foco aqui é surf, não turismo de praia. Pousadas simples e bem localizadas cobrem bem o que você precisa. Vá com o equipamento certo: prancha de performance e leash reforçado são essenciais.</p>
           </div>
           <aside class="sidebar" aria-label="Informações rápidas">
             <div class="sidebar-card">
@@ -276,6 +278,11 @@
         toggle.setAttribute('aria-label','Alternar para modo '+(mode==='dark'?'claro':'escuro'));
       }
       setIcon();
+
+      // Newsletter form
+      var form=document.getElementById('newsletter-form');
+      var success=document.getElementById('newsletter-success');
+      if(form){form.addEventListener('submit',function(e){e.preventDefault();var email=form.querySelector('input[type="email"]').value;if(email&&email.includes('@')){form.style.display='none';success.style.display='block';}});}
       toggle.addEventListener('click',function(){mode=mode==='dark'?'light':'dark';root.setAttribute('data-theme',mode);setIcon();});
     })();
   </script>
