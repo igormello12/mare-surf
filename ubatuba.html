@@ -190,13 +190,15 @@
 
         <div class="content-layout">
           <div class="prose">
-            <h2>Por que Ubatuba?</h2>
-            <p>Costa recortada, bastante opção de praia e uma atmosfera de surf trip mais roots, com natureza muito presente. A escolha faz sentido para quem quer uma trip com identidade própria, longe dos roteiros mais óbvios — mas sem abrir mão de contexto e segurança na hora de planejar.</p>
-            <p>O ritmo do destino é o que define a experiência. Você pode chegar com um plano fixo ou deixar a maré ditar os dias — em ambos os casos, Ubatuba tem o que precisa para funcionar como base de uma surf trip de qualidade.</p>
-            <div class="quote">"O melhor pico é o que encaixa com o seu ritmo de viagem — não só com o seu nível de surf."</div>
-            <h2>Como aproveitar melhor</h2>
-            <p>Reserve pelo menos 4 a 5 dias para sentir o destino de verdade. Os dois primeiros tendem a ser de ambientação — descobrir qual praia encaixa com o seu estilo, entender os ventos locais e calibrar as expectativas. O terceiro dia em diante é quando a trip começa a fluir.</p>
-            <p>Fique de olho na previsão de swell e vento local. Em Ubatuba, pequenas variações de direção de vento mudam muito a qualidade da onda dependendo do pico escolhido.</p>
+                        <h2>Por que Ubatuba?</h2>
+            <p>Ubatuba é um dos destinos mais honestos do litoral paulista. Não tenta ser mais do que é: uma cidade costeira com natureza generosa, boas ondas e uma vibe que ainda parece de 20 anos atrás — no bom sentido. Aqui o surf ainda tem cara de ritual.</p>
+            <p>São mais de 70 praias espalhadas por uma costa que mistura mata atlântica preservada com morros que caem direto no mar. A maioria delas só é acessível por trilha ou barco, o que naturalmente filtra o crowd e preserva a qualidade de onde você vai surfar.</p>
+            <div class="quote">"Em Ubatuba, você não vai às praias. Você as descobre."</div>
+            <h2>Os picos</h2>
+            <p>Itamambuca é o mais famoso — beach break consistente com boa qualidade quando o swell chega. Fica no norte do município e é ponto de encontro para surfistas que querem onda com mais energia. Tenório e Toninhas são opções mais acessíveis para quem está começando ou quer um dia mais leve.</p>
+            <p>Para quem tem mais experiência e disposição para trilha, as praias do sul como Prumirim e Camburi recompensam com picos vazios e paisagem que pouca coisa supera. Leve comida, água e tudo que precisar — estrutura é mínima por lá.</p>
+            <h2>Como organizar a trip</h2>
+            <p>Ubatuba tem dois eixos principais: o centro (mais movimentado, bom para estrutura e custo) e as praias do norte (mais isoladas, melhor para surf de qualidade). Fica a 4 horas de São Paulo pela Rodovia Rio-Santos — uma das estradas mais bonitas do Brasil e já vale a viagem.</p>
           </div>
           <aside class="sidebar" aria-label="Informações rápidas">
             <div class="sidebar-card">
@@ -276,6 +278,11 @@
         toggle.setAttribute('aria-label','Alternar para modo '+(mode==='dark'?'claro':'escuro'));
       }
       setIcon();
+
+      // Newsletter form
+      var form=document.getElementById('newsletter-form');
+      var success=document.getElementById('newsletter-success');
+      if(form){form.addEventListener('submit',function(e){e.preventDefault();var email=form.querySelector('input[type="email"]').value;if(email&&email.includes('@')){form.style.display='none';success.style.display='block';}});}
       toggle.addEventListener('click',function(){mode=mode==='dark'?'light':'dark';root.setAttribute('data-theme',mode);setIcon();});
     })();
   </script>
