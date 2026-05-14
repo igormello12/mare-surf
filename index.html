@@ -131,7 +131,7 @@
 
     /* DESTINATIONS GRID */
     .destinations-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-5); }
-    .card { background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-sm); }
+    .card { display:block; background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-sm); }
     .card:hover { box-shadow:var(--shadow-md);transform:translateY(-3px); }
     .card-media { aspect-ratio:16/10;background-size:cover;background-position:center;position:relative; }
     .card-media::after { content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 20%,rgba(11,77,107,.3)); }
@@ -255,46 +255,46 @@
           <p>Cada destino mistura vibe, acesso, melhor época e sensação geral — para ajudar a escolher a próxima viagem com mais contexto.</p>
         </div>
         <div class="destinations-grid">
-          <article class="card">
+          <a class="card" href="florianopolis.html">
             <div class="card-media" role="img" aria-label="Ondas em Florianópolis" style="background-image:linear-gradient(180deg,rgba(11,77,107,.12),rgba(11,77,107,.32)),url(https://picsum.photos/seed/floripa-waves/900/600);"></div>
             <div class="card-body">
               <div class="pill-row"><span class="pill">Versátil</span><span class="pill">Cidade + praia</span></div>
               <h3>Florianópolis</h3>
               <p>Boa para quem quer variedade de picos, estrutura e liberdade para montar a trip entre surf, comida e descanso.</p>
             </div>
-          </article>
-          <article class="card">
+          </a>
+          <a class="card" href="ubatuba.html">
             <div class="card-media" role="img" aria-label="Costa de Ubatuba" style="background-image:linear-gradient(180deg,rgba(11,77,107,.12),rgba(11,77,107,.32)),url(https://picsum.photos/seed/ubatuba-coast/900/600);"></div>
             <div class="card-body">
               <div class="pill-row"><span class="pill">Mata atlântica</span><span class="pill">Constância</span></div>
               <h3>Ubatuba</h3>
               <p>Costa recortada, bastante opção de praia e uma atmosfera de surf trip mais roots, com natureza presente.</p>
             </div>
-          </article>
-          <article class="card">
+          </a>
+          <a class="card" href="itacare.html">
             <div class="card-media" role="img" aria-label="Praias de Itacaré" style="background-image:linear-gradient(180deg,rgba(11,77,107,.12),rgba(11,77,107,.32)),url(https://picsum.photos/seed/itacare-tropical/900/600);"></div>
             <div class="card-body">
               <div class="pill-row"><span class="pill">Bahia</span><span class="pill">Tropical</span></div>
               <h3>Itacaré</h3>
               <p>Água morna, vegetação intensa e clima de viagem com energia leve — boa para dias mais contemplativos.</p>
             </div>
-          </article>
-          <article class="card">
+          </a>
+          <a class="card" href="garopaba.html">
             <div class="card-media" role="img" aria-label="Praia em Garopaba" style="background-image:linear-gradient(180deg,rgba(11,77,107,.12),rgba(11,77,107,.32)),url(https://picsum.photos/seed/garopaba-beach/900/600);"></div>
             <div class="card-body">
               <div class="pill-row"><span class="pill">Sul</span><span class="pill">Ritmo calmo</span></div>
               <h3>Garopaba</h3>
               <p>Uma base com ar de vila costeira, para quem busca paisagem forte e uma experiência menos acelerada.</p>
             </div>
-          </article>
-          <article class="card">
+          </a>
+          <a class="card" href="saquarema.html">
             <div class="card-media" role="img" aria-label="Ondas em Saquarema" style="background-image:linear-gradient(180deg,rgba(11,77,107,.12),rgba(11,77,107,.32)),url(https://picsum.photos/seed/saquarema-surf/900/600);"></div>
             <div class="card-body">
               <div class="pill-row"><span class="pill">Performance</span><span class="pill">Tradição</span></div>
               <h3>Saquarema</h3>
               <p>Referência nacional para quem pensa em onda com mais energia e em uma cultura de surf muito presente.</p>
             </div>
-          </article>
+          </a>
         </div>
       </div>
     </section>
