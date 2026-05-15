@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saquarema — Maré</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22fg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%2232%22%20y2%3D%2232%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%230B4D6B%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%231A8FA0%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22url%28%23fg%29%22/%3E%0A%20%20%3Cpath%20d%3D%22M5%2020c2%200%202-2.8%204-2.8S11%2020%2013%2020s2-2.8%204-2.8S19%2020%2021%2020s2-2.8%204-2.8S27%2020%2029%2020%22%20stroke%3D%22white%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M7%2014c1.6%200%201.6-2.2%203.2-2.2S13.4%2014%2015%2014s1.6-2.2%203.2-2.2S21.4%2014%2023%2014s1.6-2.2%203.2-2.2%22%20stroke%3D%22white%22%20stroke-width%3D%221.4%22%20stroke-linecap%3D%22round%22%20opacity%3D%220.7%22/%3E%0A%3C/svg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2232%22%20height%3D%2232%22%20viewBox%3D%220%200%2032%2032%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3ClinearGradient%20id%3D%22fg%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%2232%22%20y2%3D%2232%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%230B4D6B%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%231A8FA0%22/%3E%0A%20%20%20%20%3C/linearGradient%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22url%28%23fg%29%22/%3E%0A%20%20%3Cpath%20d%3D%22M5%2020c2%200%202-2.8%204-2.8S11%2020%2013%2020s2-2.8%204-2.8S19%2020%2021%2020s2-2.8%204-2.8S27%2020%2029%2020%22%20stroke%3D%22white%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22/%3E%0A%20%20%3Cpath%20d%3D%22M7%2014c1.6%200%201.6-2.2%203.2-2.2S13.4%2014%2015%2014s1.6-2.2%203.2-2.2S21.4%2014%2023%2014s1.6-2.2%203.2-2.2%22%20stroke%3D%22white%22%20stroke-width%3D%221.4%22%20stroke-linecap%3D%22round%22%20opacity%3D%220.7%22/%3E%0A%3C/svg%3E">
+  <meta name="description" content="Referência nacional para quem pensa em onda com mais energia e em uma cultura de surf muito presente." />
+  <meta property="og:title" content="Saquarema — Maré" />
+  <meta property="og:description" content="Referência nacional para quem pensa em onda com mais energia e em uma cultura de surf muito presente." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root,[data-theme="light"]{
+      --text-xs:clamp(0.75rem,0.7rem + 0.25vw,0.875rem);--text-sm:clamp(0.875rem,0.8rem + 0.35vw,1rem);
+      --text-base:clamp(1rem,0.95rem + 0.25vw,1.125rem);--text-lg:clamp(1.125rem,1rem + 0.75vw,1.5rem);
+      --text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);--text-2xl:clamp(2rem,1.2rem + 2.5vw,3.8rem);
+      --space-1:.25rem;--space-2:.5rem;--space-3:.75rem;--space-4:1rem;--space-5:1.25rem;--space-6:1.5rem;
+      --space-8:2rem;--space-10:2.5rem;--space-12:3rem;--space-16:4rem;
+      --color-bg:#E8F4F8;--color-surface:#f4fbfd;--color-surface-2:#ffffff;--color-surface-offset:#dceff3;
+      --color-border:rgba(11,77,107,.14);--color-divider:rgba(11,77,107,.10);
+      --color-text:#123042;--color-text-muted:#4f6b79;--color-text-faint:#7d99a6;--color-text-inverse:#f6fbfc;
+      --color-primary:#0B4D6B;--color-primary-hover:#083c54;--color-secondary:#1A8FA0;
+      --color-success:#5DCAA5;--color-accent:#EF9F27;
+      --radius-sm:.4rem;--radius-md:.75rem;--radius-lg:1.25rem;--radius-xl:1.75rem;--radius-full:999px;
+      --shadow-sm:0 2px 10px rgba(11,77,107,.06);--shadow-md:0 16px 40px rgba(11,77,107,.10);
+      --content-default:1120px;--font-display:'Playfair Display',Georgia,serif;--font-body:'DM Sans',Arial,sans-serif;
+      --transition:180ms cubic-bezier(0.16,1,0.3,1);
+    }
+    [data-theme="dark"]{
+      --color-bg:#0d2230;--color-surface:#112b3b;--color-surface-2:#153547;--color-surface-offset:#193f54;
+      --color-border:rgba(232,244,248,.12);--color-divider:rgba(232,244,248,.08);
+      --color-text:#eaf5f8;--color-text-muted:#b8d1d8;--color-text-faint:#86aab5;--color-text-inverse:#082131;
+      --color-primary:#5ab3c0;--color-primary-hover:#78c7d1;--color-secondary:#5DCAA5;--color-accent:#f4b550;
+      --shadow-sm:0 2px 10px rgba(0,0,0,.22);--shadow-md:0 16px 40px rgba(0,0,0,.28);
+    }
+    @media(prefers-color-scheme:dark){:root:not([data-theme]){
+      --color-bg:#0d2230;--color-surface:#112b3b;--color-surface-2:#153547;--color-surface-offset:#193f54;
+      --color-border:rgba(232,244,248,.12);--color-divider:rgba(232,244,248,.08);
+      --color-text:#eaf5f8;--color-text-muted:#b8d1d8;--color-text-faint:#86aab5;--color-text-inverse:#082131;
+      --color-primary:#5ab3c0;--color-primary-hover:#78c7d1;--color-secondary:#5DCAA5;--color-accent:#f4b550;
+      --shadow-sm:0 2px 10px rgba(0,0,0,.22);--shadow-md:0 16px 40px rgba(0,0,0,.28);
+    }}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+    body{font-family:var(--font-body);font-size:var(--text-base);background:var(--color-bg);color:var(--color-text);line-height:1.6;min-height:100dvh;}
+    img,svg{display:block;max-width:100%;height:auto;}
+    a{color:inherit;text-decoration:none;transition:color var(--transition);}
+    button{font:inherit;border:none;background:none;color:inherit;cursor:pointer;}
+    h1,h2,h3{font-family:var(--font-display);line-height:1.08;text-wrap:balance;}
+    h1{font-size:var(--text-2xl);}
+    h2{font-size:var(--text-xl);margin-bottom:var(--space-4);}
+    h3{font-size:var(--text-lg);margin-bottom:var(--space-2);}
+    p{text-wrap:pretty;}
+    :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm);}
+    .skip-link{position:absolute;left:-9999px;}
+    .skip-link:focus{left:1rem;top:1rem;background:var(--color-surface-2);padding:.75rem 1rem;z-index:1000;border-radius:var(--radius-md);}
+    .container{width:min(calc(100% - 2rem),var(--content-default));margin:0 auto;}
+    /* HEADER */
+    .site-header{position:sticky;top:0;z-index:20;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);background:color-mix(in srgb,var(--color-bg) 80%,transparent);border-bottom:1px solid var(--color-divider);}
+    .header-row{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);padding:var(--space-2) 0;}
+    .brand{display:flex;align-items:center;gap:.8rem;}
+    .brand-mark { width:42px;height:42px;display:grid;place-items:center;flex-shrink:0;background:none !important;border-radius:0 !important; }
+    .brand-mark svg { width:42px;height:42px; }
+    .brand-name{font-family:var(--font-display);font-size:1.45rem;line-height:1;}
+    .brand-tag{font-size:var(--text-xs);color:var(--color-text-muted);}
+    nav ul{list-style:none;display:flex;gap:var(--space-5);flex-wrap:wrap;}
+    nav a{font-size:var(--text-sm);color:var(--color-text-muted);}
+    nav a:hover{color:var(--color-primary);}
+    .header-actions{display:flex;align-items:center;gap:.75rem;}
+    .theme-toggle{min-width:44px;min-height:44px;border-radius:var(--radius-full);border:1px solid var(--color-border);background:var(--color-surface-2);padding:.75rem;display:grid;place-items:center;}
+    .theme-toggle:hover{background:var(--color-surface-offset);}
+    .nav-back{min-height:44px;padding:.75rem 1.15rem;border-radius:var(--radius-full);border:1px solid var(--color-border);background:var(--color-surface-2);font-size:var(--text-sm);display:inline-flex;align-items:center;gap:.5rem;}
+    .nav-back:hover{background:var(--color-surface-offset);}
+    /* HERO */
+    .dest-hero{position:relative;min-height:480px;display:flex;align-items:flex-end;overflow:hidden;border-radius:0 0 var(--radius-xl) var(--radius-xl);margin-bottom:var(--space-10);}
+    .dest-hero-img{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0;}
+    .dest-hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,77,107,.18) 0%,rgba(11,77,107,.72) 100%);}
+    .dest-hero-content{position:relative;z-index:1;padding:var(--space-10) var(--space-6) var(--space-8);width:100%;color:white;}
+    .dest-hero-content .eyebrow{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.15);color:white;margin-bottom:var(--space-4);}
+    .dest-hero-content h1{color:white;max-width:18ch;}
+    .dest-hero-content .state{font-size:var(--text-sm);opacity:.8;margin-top:var(--space-2);}
+    /* UTILS */
+    .eyebrow{display:inline-flex;gap:.5rem;align-items:center;padding:.4rem .8rem;border-radius:var(--radius-full);background:var(--color-surface);border:1px solid var(--color-border);font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.08em;color:var(--color-primary);}
+    .pill{font-size:var(--text-xs);padding:.3rem .65rem;border-radius:var(--radius-full);background:color-mix(in srgb,var(--color-secondary) 12%,var(--color-surface));color:var(--color-primary);}
+    .pill-row{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:var(--space-4);}
+    .section{padding:clamp(2.5rem,5vw,4.5rem) 0;}
+    /* DETAIL GRID */
+    .detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-4);margin-bottom:var(--space-8);}
+    .detail-box{background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-4);}
+    .detail-box strong{display:block;margin-bottom:var(--space-1);color:var(--color-primary);font-size:var(--text-sm);}
+    .detail-box span{font-size:var(--text-sm);color:var(--color-text-muted);}
+    /* CONTENT LAYOUT */
+    .content-layout{display:grid;grid-template-columns:1fr .42fr;gap:var(--space-8);align-items:start;}
+    .prose p{color:var(--color-text-muted);margin-bottom:var(--space-4);max-width:68ch;}
+    .prose h2{margin-top:var(--space-8);margin-bottom:var(--space-3);}
+    .quote{padding:var(--space-6);border-left:3px solid var(--color-accent);background:color-mix(in srgb,var(--color-accent) 8%,var(--color-surface-2));border-radius:0 var(--radius-lg) var(--radius-lg) 0;font-family:var(--font-display);font-size:var(--text-lg);line-height:1.45;color:var(--color-text);font-style:italic;margin:var(--space-8) 0;}
+    /* SIDEBAR */
+    .sidebar{display:grid;gap:var(--space-4);position:sticky;top:calc(64px + var(--space-4));}
+    .sidebar-card{background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-5);box-shadow:var(--shadow-sm);}
+    .sidebar-card h3{margin-bottom:var(--space-3);}
+    .sidebar-list{list-style:none;display:grid;gap:var(--space-2);}
+    .sidebar-list li{font-size:var(--text-sm);color:var(--color-text-muted);padding:var(--space-2) 0;border-bottom:1px solid var(--color-divider);display:flex;gap:.5rem;align-items:flex-start;}
+    .sidebar-list li:last-child{border-bottom:none;}
+    .sidebar-list li::before{content:'→';color:var(--color-secondary);flex-shrink:0;}
+    .btn-full{display:flex;align-items:center;justify-content:center;width:100%;min-height:48px;padding:.9rem 1.25rem;border-radius:var(--radius-full);font-size:var(--text-sm);font-family:var(--font-body);background:var(--color-primary);color:var(--color-text-inverse);margin-top:var(--space-4);transition:background var(--transition),transform var(--transition);}
+    .btn-full:hover{background:var(--color-primary-hover);transform:translateY(-1px);}
+    /* MORE DESTINATIONS */
+    .more-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-4);}
+    .more-card{background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-sm);transition:box-shadow var(--transition),transform var(--transition);}
+    .more-card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px);}
+    .more-card-img{aspect-ratio:4/3;background-size:cover;background-position:center;}
+    .more-card-body{padding:var(--space-4);}
+    .more-card-body h3{font-size:var(--text-base);margin-bottom:.25rem;}
+    .more-card-body p{font-size:var(--text-xs);color:var(--color-text-muted);}
+    /* FOOTER */
+    .footer{padding:var(--space-10) 0 var(--space-16);border-top:1px solid var(--color-divider);margin-top:var(--space-10);}
+    .footer-row{display:flex;justify-content:space-between;gap:var(--space-6);flex-wrap:wrap;}
+    .footer p{color:var(--color-text-muted);margin-top:var(--space-2);max-width:42ch;}
+    @media(max-width:980px){
+      .content-layout{grid-template-columns:1fr;}
+      .detail-grid{grid-template-columns:repeat(2,1fr);}
+      .more-grid{grid-template-columns:repeat(2,1fr);}
+      .sidebar{position:static;}
+    }
+    @media(max-width:640px){
+      .detail-grid{grid-template-columns:1fr 1fr;}
+      .more-grid{grid-template-columns:1fr 1fr;}
+      .header-row{flex-wrap:wrap;}
+      .dest-hero{min-height:360px;}
+      .footer-row{flex-direction:column;}
+    }
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important;}html{scroll-behavior:auto;}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand" href="index.html" aria-label="Maré — página inicial">
+        <div class="brand-mark" aria-hidden="true">
+          <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="21" cy="21" r="21" fill="#0B4D6B"/><path d="M6 24c2.2 0 2.2-3.2 4.4-3.2S12.6 24 14.8 24s2.2-3.2 4.4-3.2S21.4 24 23.6 24s2.2-3.2 4.4-3.2S30.2 24 32.4 24" stroke="white" stroke-width="2.2" stroke-linecap="round"/><path d="M8 16c1.8 0 1.8-2.5 3.6-2.5S15.2 16 17 16s1.8-2.5 3.6-2.5S24.2 16 26 16s1.8-2.5 3.6-2.5" stroke="white" stroke-width="1.3" stroke-linecap="round" opacity="0.45"/></svg>
+        </div>
+        <div>
+          <div class="brand-name">Maré</div>
+          <div class="brand-tag">No seu ritmo.</div>
+        </div>
+      </a>
+      <nav aria-label="Principal">
+        <ul>
+          <li><a href="index.html#destinos">Destinos</a></li>
+          <li><a href="index.html#sobre">Curadoria</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <div class="lang-selector" style="position:relative;">
+        <button class="lang-btn" id="lang-btn" aria-haspopup="listbox" aria-expanded="false" style="display:flex;align-items:center;gap:.4rem;background:transparent;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:.35rem .75rem;cursor:pointer;color:var(--color-text);font:inherit;font-size:.82rem;font-weight:600;transition:all 180ms;">
+          <span id="lang-flag">🇧🇷</span>
+          <span id="lang-code">PT</span>
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div id="lang-dropdown" role="listbox" style="display:none;position:absolute;top:calc(100% + .5rem);right:0;background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:1rem;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.18);min-width:130px;z-index:200;">
+          <button class="lang-opt" data-lang="pt" data-flag="🇧🇷" data-code="PT" role="option" style="display:flex;align-items:center;gap:.6rem;width:100%;padding:.6rem 1rem;background:none;border:none;cursor:pointer;font:inherit;font-size:.88rem;color:var(--color-text);transition:background 120ms;">🇧🇷 Português</button>
+          <button class="lang-opt" data-lang="en" data-flag="🇺🇸" data-code="EN" role="option" style="display:flex;align-items:center;gap:.6rem;width:100%;padding:.6rem 1rem;background:none;border:none;cursor:pointer;font:inherit;font-size:.88rem;color:var(--color-text);transition:background 120ms;">🇺🇸 English</button>
+          <button class="lang-opt" data-lang="es" data-flag="🇪🇸" data-code="ES" role="option" style="display:flex;align-items:center;gap:.6rem;width:100%;padding:.6rem 1rem;background:none;border:none;cursor:pointer;font:inherit;font-size:.88rem;color:var(--color-text);transition:background 120ms;">🇪🇸 Español</button>
+        </div>
+      </div>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Alternar tema">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <a class="nav-back" href="index.html"><span id="back-link">← Todos os destinos</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <div class="dest-hero">
+      <div class="dest-hero-img" style="background-image:url(https://picsum.photos/seed/saquarema-rj-waves/1600/900);" role="img" aria-label="Paisagem de Saquarema"></div>
+      <div class="container dest-hero-content">
+        <span class="eyebrow">Rio de Janeiro — RJ</span>
+        <h1>Saquarema</h1>
+        <p class="state">Referência nacional para quem pensa em onda com mais energia e em uma cultura de surf muito presente.</p>
+      </div>
+    </div>
+
+    <section class="section" id="conteudo-destino">
+      <div class="container">
+        <div class="pill-row">
+          <span class="pill">Performance</span><span class="pill">Tradição</span><span class="pill">Onda pesada</span><span class="pill">Cultura de surf</span>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-box"><strong>Vibe geral</strong><span>Brava, com orgulho de ser a capital do surf brasileiro.</span></div>
+          <div class="detail-box"><strong>Melhor para</strong><span>Surfistas que buscam onda com qualidade e cultura local.</span></div>
+          <div class="detail-box"><strong>Ritmo</strong><span>Trip focada em surf, menos em infraestrutura turística.</span></div>
+          <div class="detail-box"><strong>Sensação</strong><span>Respeito imediato pelos locais — e pelas ondas.</span></div>
+          <div class="detail-box"><strong>Melhor época</strong><span>Maio a agosto, melhor swell do ano.</span></div>
+          <div class="detail-box"><strong>Acesso</strong><span>2h do Rio de Janeiro pela BR-101.</span></div>
+        </div>
+
+        <div class="content-layout">
+          <div class="prose">
+                        <h2>Por que Saquarema?</h2>
+            <p>Saquarema não é um destino de surf — ela é a referência. Capital brasileira do surfe, sede do principal evento do CT no país, berço de gerações de surfistas profissionais. Quando você chega lá, sente o peso positivo dessa tradição.</p>
+            <p>Isso muda o ambiente de um jeito palpável. Os locais surfam bem, o respeito pela etiqueta na água é mais rígido do que em outros picos, e a qualidade das ondas justifica tudo isso. Saquarema não é o destino para quem quer relaxar — é o destino para quem quer surfar de verdade.</p>
+            <div class="quote">"Em Saquarema, a onda cobra o que você tem. E devolve em dobro."</div>
+            <h2>Os picos</h2>
+            <p>Itaúna é o coração do surf em Saquarema — a onda que recebe o WSL e que já foi palco de algumas das performances mais memoráveis do surf brasileiro. Poderosa, oca e exigente. Não é para todo mundo, mas para quem está pronto, é uma das melhores experiências que o litoral brasileiro oferece.</p>
+            <p>Barra Nova e Jaconé são alternativas mais acessíveis, com ondas de qualidade em dias de swell menor. Boas pedidas para aquecer antes de tentar Itaúna ou para dias em que o mar está grande demais no pico principal.</p>
+            <h2>Como organizar a trip</h2>
+            <p>Saquarema fica a duas horas do Rio de Janeiro pela BR-101. A infraestrutura turística é mais simples do que em Floripa ou Ubatuba — o foco aqui é surf, não turismo de praia. Pousadas simples e bem localizadas cobrem bem o que você precisa. Vá com o equipamento certo: prancha de performance e leash reforçado são essenciais.</p>
+          </div>
+          <aside class="sidebar" aria-label="Informações rápidas">
+            <div class="sidebar-card">
+              <h3>Na mala</h3>
+              <ul class="sidebar-list">
+                <li>Protetor solar fator 70+</li>
+                <li>Roupa de wetsuit leve (se for ao Sul)</li>
+                <li>Prancha reserva ou quilha extra</li>
+                <li>Repelente para o fim do dia</li>
+                <li>Dinheiro em espécie para feiras e barracas</li>
+              </ul>
+            </div>
+            <div class="sidebar-card">
+              <h3>Dicas rápidas</h3>
+              <ul class="sidebar-list">
+                <li>Chegue cedo: picos lotam após as 9h nos fins de semana</li>
+                <li>Alugue carro ou moto para explorar praias remotas</li>
+                <li>Converse com surfistas locais — as dicas mais honestas</li>
+                <li>Verifique a previsão de maré antes de sair</li>
+              </ul>
+            </div>
+            <a class="btn-full" href="index.html#destinos">Ver todos os destinos</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP SECTION -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+      .pico-btn{display:flex;flex-direction:column;width:100%;text-align:left;padding:.75rem 1rem;border-radius:1.25rem;background:var(--color-surface-2);border:1px solid var(--color-border);cursor:pointer;transition:all 180ms;}
+      .pico-btn:hover,.pico-btn.active{background:var(--color-primary);border-color:var(--color-primary);}
+      .pico-btn:hover .pico-btn-name,.pico-btn.active .pico-btn-name{color:white;}
+      .pico-btn:hover .pico-btn-meta,.pico-btn.active .pico-btn-meta{color:rgba(255,255,255,.75);}
+      .pico-btn-name{font-weight:700;font-size:.95rem;color:var(--color-text);}
+      .pico-btn-meta{font-size:.8rem;color:var(--color-text-muted);margin-top:.2rem;}
+      @media(max-width:780px){#mare-map{height:320px!important;}.map-grid{grid-template-columns:1fr!important;}.pico-list-wrap{grid-template-columns:1fr 1fr!important;}}
+
+      .lang-opt:hover { background: var(--color-surface-offset) !important; }
+      .lang-btn:hover { border-color: var(--color-primary) !important; color: var(--color-primary) !important; }
+      [data-theme="dark"] .lang-btn { border-color: rgba(255,255,255,.25); }
+    </style>
+    <section class="section" id="mapa" style="background:var(--color-surface);border-top:1px solid var(--color-divider);">
+      <div class="container">
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem;">
+          <div><span class="eyebrow" id="map-eyebrow">Mapa dos picos</span><h2 style="margin-top:.75rem;margin-bottom:0;" id="map-title">Onde surfar</h2></div>
+          <p style="color:var(--color-text-muted);max-width:46ch;margin:0;" id="map-desc">Clique em um pico para voar até ele no mapa.</p>
+        </div>
+        <div class="map-grid" style="display:grid;grid-template-columns:.3fr 1fr;gap:1.25rem;align-items:start;">
+          <div class="pico-list-wrap" style="display:grid;gap:.6rem;">
+            <button class="pico-btn" onclick="mareMapFly(-22.93,-42.5083,'Itaúna','Avançado','Beach break',this)">
+              <span class="pico-btn-name">Itaúna</span>
+              <span class="pico-btn-meta">Avançado · Beach break</span>
+            </button>
+            <button class="pico-btn" onclick="mareMapFly(-22.9133,-42.4817,'Barra Nova','Intermediário','Beach break',this)">
+              <span class="pico-btn-name">Barra Nova</span>
+              <span class="pico-btn-meta">Intermediário · Beach break</span>
+            </button>
+            <button class="pico-btn" onclick="mareMapFly(-22.9017,-42.4517,'Jaconé','Intermediário','Beach break',this)">
+              <span class="pico-btn-name">Jaconé</span>
+              <span class="pico-btn-meta">Intermediário · Beach break</span>
+            </button>
+            <button class="pico-btn" onclick="mareMapFly(-22.9383,-42.5367,'Vilatur','Iniciante/Intermediário','Beach break',this)">
+              <span class="pico-btn-name">Vilatur</span>
+              <span class="pico-btn-meta">Iniciante/Intermediário · Beach break</span>
+            </button>
+          </div>
+          <div style="position:relative;border-radius:1.75rem;overflow:hidden;box-shadow:0 16px 40px rgba(11,77,107,.10);border:1px solid var(--color-border);">
+            <div id="mare-map" style="width:100%;height:460px;"></div>
+            <div id="map-popup" style="display:none;position:absolute;bottom:1.25rem;left:50%;transform:translateX(-50%);background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:1rem;padding:.65rem 1.1rem;box-shadow:0 8px 24px rgba(11,77,107,.15);white-space:nowrap;z-index:999;">
+              <strong id="popup-name" style="display:block;font-size:.95rem;"></strong>
+              <span id="popup-meta" style="font-size:.78rem;color:var(--color-text-muted);"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<script>
+(function() {
+  var picos = [{"name": "Itaúna", "lat": -22.93, "lng": -42.5083, "nivel": "Avançado", "tipo": "Beach break"}, {"name": "Barra Nova", "lat": -22.9133, "lng": -42.4817, "nivel": "Intermediário", "tipo": "Beach break"}, {"name": "Jaconé", "lat": -22.9017, "lng": -42.4517, "nivel": "Intermediário", "tipo": "Beach break"}, {"name": "Vilatur", "lat": -22.9383, "lng": -42.5367, "nivel": "Iniciante/Intermediário", "tipo": "Beach break"}];
+  function initMap() {
+    if (!document.getElementById('mare-map')) return;
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    var tileLight = 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+    var tileDark  = 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
+    var map = window._mareMap = L.map('mare-map', {zoomControl: true, scrollWheelZoom: false})
+      .setView([-22.9217,-42.51], 12);
+    var tile = window._mareTile = L.tileLayer(isDark ? tileDark : tileLight, {
+      attribution: '&copy; <a href="https://carto.com">CARTO</a>',
+      subdomains: 'abcd', maxZoom: 19
+    }).addTo(map);
+    function makeIcon(color) {
+      return L.divIcon({
+        html: '<svg width="26" height="34" viewBox="0 0 28 36" fill="none"><path d="M14 0C6.3 0 0 6.3 0 14c0 9.3 14 22 14 22S28 23.3 28 14C28 6.3 21.7 0 14 0z" fill="'+color+'"/><circle cx="14" cy="14" r="5" fill="white"/></svg>',
+        iconSize: [26, 34], iconAnchor: [13, 34], popupAnchor: [0, -34], className: ''
+      });
+    }
+    picos.forEach(function(p) {
+      L.marker([p.lat, p.lng], {icon: makeIcon('#0B4D6B')}).addTo(map)
+        .bindTooltip('<strong>' + p.name + '</strong><br><span style="font-size:12px;color:#4f6b79">' + p.nivel + ' · ' + p.tipo + '</span>', {direction: 'top', offset: [0, -30]});
+    });
+    document.querySelector('[data-theme-toggle]').addEventListener('click', function() {
+      setTimeout(function() {
+        var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        tile.setUrl(dark ? tileDark : tileLight);
+      }, 50);
+    });
+  }
+  window.mareMapFly = function(lat, lng, name, nivel, tipo, btn) {
+    if (window._mareMap) {
+      window._mareMap.flyTo([lat, lng], 14, {duration: 1.2});
+    }
+    document.querySelectorAll('.pico-btn').forEach(function(b) { b.classList.remove('active'); });
+    if (btn) btn.classList.add('active');
+    var popup = document.getElementById('map-popup');
+    document.getElementById('popup-name').textContent = name;
+    document.getElementById('popup-meta').textContent = nivel + ' · ' + tipo;
+    if (popup) popup.style.display = 'block';
+  };
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMap);
+  } else {
+    initMap();
+  }
+})();
+</script>
+
+    <section class="section" style="background:var(--color-surface);border-top:1px solid var(--color-divider);">
+      <div class="container">
+        <h2 style="margin-bottom:var(--space-6);" id="other-title">Outros destinos</h2>
+        <div class="more-grid">
+          <a class="more-card" href="florianopolis.html">
+            <div class="more-card-img" style="background-image:linear-gradient(rgba(11,77,107,.15),rgba(11,77,107,.3)),url(https://picsum.photos/seed/floripa-waves/600/450);" role="img" aria-label="Florianópolis"></div>
+            <div class="more-card-body"><h3>Florianópolis</h3><p>Versátil · SC</p></div>
+          </a>
+          <a class="more-card" href="ubatuba.html">
+            <div class="more-card-img" style="background-image:linear-gradient(rgba(11,77,107,.15),rgba(11,77,107,.3)),url(https://picsum.photos/seed/ubatuba-coast/600/450);" role="img" aria-label="Ubatuba"></div>
+            <div class="more-card-body"><h3>Ubatuba</h3><p>Roots · SP</p></div>
+          </a>
+          <a class="more-card" href="itacare.html">
+            <div class="more-card-img" style="background-image:linear-gradient(rgba(11,77,107,.15),rgba(11,77,107,.3)),url(https://picsum.photos/seed/itacare-tropical/600/450);" role="img" aria-label="Itacaré"></div>
+            <div class="more-card-body"><h3>Itacaré</h3><p>Tropical · BA</p></div>
+          </a>
+          <a class="more-card" href="garopaba.html">
+            <div class="more-card-img" style="background-image:linear-gradient(rgba(11,77,107,.15),rgba(11,77,107,.3)),url(https://picsum.photos/seed/garopaba-beach/600/450);" role="img" aria-label="Garopaba"></div>
+            <div class="more-card-body"><h3>Garopaba</h3><p>Calmo · SC</p></div>
+          </a>
+          <a class="more-card" href="saquarema.html">
+            <div class="more-card-img" style="background-image:linear-gradient(rgba(11,77,107,.15),rgba(11,77,107,.3)),url(https://picsum.photos/seed/saquarema-surf/600/450);" role="img" aria-label="Saquarema"></div>
+            <div class="more-card-body"><h3>Saquarema</h3><p>Performance · RJ</p></div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <div>
+        <div class="brand-name" style="font-family:var(--font-display);font-size:1.8rem;">Maré</div>
+        <p>Curadoria de surf travel no Brasil, feita para escolher a próxima trip sem pressa.</p>
+      </div>
+      <p style="color:var(--color-text-muted);font-size:var(--text-sm);">🐾 Tatui aprova rotas com areia, mar e vento no ponto certo.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var root=document.documentElement;
+      var toggle=document.querySelector('[data-theme-toggle]');
+      var mode=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+      root.setAttribute('data-theme',mode);
+      function setIcon(){
+        toggle.innerHTML=mode==='dark'
+          ?'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+          :'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+        toggle.setAttribute('aria-label','Alternar para modo '+(mode==='dark'?'claro':'escuro'));
+      }
+      setIcon();
+
+      // Newsletter form
+      var form=document.getElementById('newsletter-form');
+      var success=document.getElementById('newsletter-success');
+      if(form){form.addEventListener('submit',function(e){e.preventDefault();var email=form.querySelector('input[type="email"]').value;if(email&&email.includes('@')){form.style.display='none';success.style.display='block';}});}
+      toggle.addEventListener('click',function(){mode=mode==='dark'?'light':'dark';root.setAttribute('data-theme',mode);setIcon();});
+    })();
+  </script>
+<script>
+(function() {
+  var T = {"pt": {"back": "← Todos os destinos", "map_eyebrow": "Mapa dos picos", "map_title": "Onde surfar", "map_desc": "Clique em um pico para voar até ele no mapa.", "other_title": "Outros destinos", "newsletter_title": "Fique por dentro", "newsletter_desc": "Receba curadoria de destinos e dicas de trip antes de todo mundo.", "newsletter_placeholder": "seu@email.com", "newsletter_btn": "Quero receber 🌊", "newsletter_success": "🎉 Incrível! Te avisamos em breve."}, "en": {"back": "← All destinations", "map_eyebrow": "Surf spots map", "map_title": "Where to surf", "map_desc": "Click a spot to fly to it on the map.", "other_title": "Other destinations", "newsletter_title": "Stay in the loop", "newsletter_desc": "Get destination curation and trip tips before everyone else.", "newsletter_placeholder": "your@email.com", "newsletter_btn": "Sign me up 🌊", "newsletter_success": "🎉 Amazing! We'll reach out soon."}, "es": {"back": "← Todos los destinos", "map_eyebrow": "Mapa de picos", "map_title": "Dónde surfear", "map_desc": "Haz clic en un pico para volar hasta él en el mapa.", "other_title": "Otros destinos", "newsletter_title": "Mantente al día", "newsletter_desc": "Recibe curaduría de destinos y consejos de viaje antes que todos.", "newsletter_placeholder": "tu@email.com", "newsletter_btn": "Quiero recibir 🌊", "newsletter_success": "🎉 ¡Increíble! Te avisamos pronto."}};
+  function setT(id, val) { var el = document.getElementById(id); if(el && val) el.textContent = val; }
+  function setHTML(id, val) { var el = document.getElementById(id); if(el && val) el.innerHTML = val; }
+  function setAttr(id, attr, val) { var el = document.getElementById(id); if(el && val) el.setAttribute(attr, val); }
+
+    function applyLang(t) {
+      setT('back-link', t.back);
+      setT('map-eyebrow', t.map_eyebrow);
+      setT('map-title', t.map_title);
+      setT('map-desc', t.map_desc);
+      setT('other-title', t.other_title);
+      setT('newsletter-sidebar-title', t.newsletter_title);
+      setT('newsletter-sidebar-desc', t.newsletter_desc);
+      setAttr('newsletter-sidebar-input', 'placeholder', t.newsletter_placeholder);
+      setT('newsletter-sidebar-btn', t.newsletter_btn);
+    }
+  function setLang(lang) {
+    localStorage.setItem('mare-lang', lang);
+    var t = T[lang] || T['pt'];
+    applyLang(t);
+    document.getElementById('lang-flag').textContent = {pt:'🇧🇷',en:'🇺🇸',es:'🇪🇸'}[lang];
+    document.getElementById('lang-code').textContent = lang.toUpperCase();
+    document.documentElement.setAttribute('lang', lang === 'pt' ? 'pt-BR' : lang);
+  }
+  // Dropdown toggle
+  var btn = document.getElementById('lang-btn');
+  var dd = document.getElementById('lang-dropdown');
+  if(btn && dd) {
+    btn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      var open = dd.style.display !== 'none';
+      dd.style.display = open ? 'none' : 'block';
+      btn.setAttribute('aria-expanded', !open);
+    });
+    document.addEventListener('click', function() { dd.style.display='none'; btn.setAttribute('aria-expanded','false'); });
+    document.querySelectorAll('.lang-opt').forEach(function(opt) {
+      opt.addEventListener('click', function() {
+        setLang(opt.getAttribute('data-lang'));
+        dd.style.display = 'none';
+      });
+    });
+  }
+  // Init from localStorage or browser language
+  var saved = localStorage.getItem('mare-lang');
+  var browserLang = (navigator.language || 'pt').slice(0,2).toLowerCase();
+  var initLang = saved || (['pt','en','es'].includes(browserLang) ? browserLang : 'pt');
+  setLang(initLang);
+})();
+</script>
+</body>
+</html>
