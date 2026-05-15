@@ -209,6 +209,18 @@
         </ul>
       </nav>
       <div class="header-actions">
+        <div class="lang-selector" style="position:relative;">
+        <button class="lang-btn" id="lang-btn" aria-haspopup="listbox" aria-expanded="false" style="display:flex;align-items:center;gap:.4rem;background:transparent;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:.35rem .75rem;cursor:pointer;color:var(--color-text);font:inherit;font-size:.82rem;font-weight:600;transition:all 180ms;">
+          <span id="lang-flag">🇧🇷</span>
+          <span id="lang-code">PT</span>
+          <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+        <div id="lang-dropdown" role="listbox" style="display:none;position:absolute;top:calc(100% + .5rem);right:0;background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:1rem;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.18);min-width:130px;z-index:200;">
+          <button class="lang-opt" data-lang="pt" data-flag="🇧🇷" data-code="PT" role="option" style="display:flex;align-items:center;gap:.6rem;width:100%;padding:.6rem 1rem;background:none;border:none;cursor:pointer;font:inherit;font-size:.88rem;color:var(--color-text);transition:background 120ms;">🇧🇷 Português</button>
+          <button class="lang-opt" data-lang="en" data-flag="🇺🇸" data-code="EN" role="option" style="display:flex;align-items:center;gap:.6rem;width:100%;padding:.6rem 1rem;background:none;border:none;cursor:pointer;font:inherit;font-size:.88rem;color:var(--color-text);transition:background 120ms;">🇺🇸 English</button>
+          <button class="lang-opt" data-lang="es" data-flag="🇪🇸" data-code="ES" role="option" style="display:flex;align-items:center;gap:.6rem;width:100%;padding:.6rem 1rem;background:none;border:none;cursor:pointer;font:inherit;font-size:.88rem;color:var(--color-text);transition:background 120ms;">🇪🇸 Español</button>
+        </div>
+      </div>
         <button class="theme-toggle" type="button" data-theme-toggle aria-label="Alternar tema">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
