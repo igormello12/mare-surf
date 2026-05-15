@@ -202,13 +202,23 @@
       </a>
       <nav aria-label="Principal">
         <ul>
-          <li><a href="#home"><span id="i18n-nav_home">Home</span></a></li>
-          <li><a href="#destinos" id="nav-destinations"><span id="i18n-nav_dest">Destinos</span></a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#destinos" id="nav-destinations">Destinos</a></li>
           <li><a href="#floripa">Florianópolis</a></li>
-          <li><a href="#sobre"><span id="i18n-nav_sobre">Curadoria</span></a></li>
+          <li><a href="#sobre">Curadoria</a></li>
         </ul>
       </nav>
       <div class="header-actions">
+        <div class="lang-selector" style="position:relative;">
+        <button id="lang-btn" type="button" aria-haspopup="listbox" style="display:flex;align-items:center;gap:.35rem;background:transparent;border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:.3rem .7rem;cursor:pointer;font:inherit;font-size:.82rem;font-weight:600;color:var(--color-text);">
+          <span id="lang-flag">🇧🇷</span><span id="lang-code">PT</span>
+        </button>
+        <ul id="lang-dropdown" role="listbox" style="display:none;position:absolute;top:calc(100% + 6px);right:0;list-style:none;margin:0;padding:4px;background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.25);min-width:140px;">
+          <li><button class="lopt" data-l="pt" type="button" style="display:flex;align-items:center;gap:8px;width:100%;padding:8px 12px;background:none;border:none;border-radius:8px;cursor:pointer;font:inherit;font-size:.88rem;color:inherit;">🇧🇷 Português</button></li>
+          <li><button class="lopt" data-l="en" type="button" style="display:flex;align-items:center;gap:8px;width:100%;padding:8px 12px;background:none;border:none;border-radius:8px;cursor:pointer;font:inherit;font-size:.88rem;color:inherit;">🇺🇸 English</button></li>
+          <li><button class="lopt" data-l="es" type="button" style="display:flex;align-items:center;gap:8px;width:100%;padding:8px 12px;background:none;border:none;border-radius:8px;cursor:pointer;font:inherit;font-size:.88rem;color:inherit;">🇪🇸 Español</button></li>
+        </ul>
+      </div>
         
         <div class="lang-selector" style="position:relative;">
           <button id="lang-btn" type="button" aria-haspopup="listbox" style="display:flex;align-items:center;gap:.35rem;background:transparent;border:1.5px solid rgba(255,255,255,.2);border-radius:999px;padding:.3rem .7rem;cursor:pointer;font:inherit;font-size:.82rem;font-weight:600;color:var(--color-text);transition:border-color 150ms;">
@@ -232,7 +242,7 @@
   <main id="conteudo">
 
     <!-- HOME -->
-    <section class="hero" id="home">
+    <section class="hero" id="home" data-block="hero">
       <div class="container hero-grid">
         <div>
           <span class="eyebrow">Curadoria de surf no Brasil</span>
@@ -369,17 +379,17 @@
     </section>
 
   
-    <section class="section" id="newsletter" style="background:linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color:white;">
+    <section class="section" id="newsletter" data-block="newsletter" style="background:linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color:white;">
       <div class="container" style="display:grid; grid-template-columns:1.1fr .9fr; gap:var(--space-8); align-items:center;">
         <div>
-          <span class="eyebrow" style="background:rgba(255,255,255,.14); border-color:rgba(255,255,255,.2); color:white;" id="newsletter-eyebrow"><span id="i18n-nl_eyebrow">Newsletter Maré</span></span>
-          <h2 style="margin-top:1rem; color:white;" id="newsletter-title"><span id="i18n-nl_title">Receba novas surf trips antes de todo mundo</span></h2>
-          <p style="color:rgba(255,255,255,.82); max-width:52ch;"><span id="i18n-nl_desc">Curadoria de destinos, melhores épocas, ideias de roteiro e novidades da Maré direto no seu e-mail.</span></p>
+          <span class="eyebrow" style="background:rgba(255,255,255,.14); border-color:rgba(255,255,255,.2); color:white;" id="newsletter-eyebrow">Newsletter Maré</span>
+          <h2 style="margin-top:1rem; color:white;" id="newsletter-title">Receba novas surf trips antes de todo mundo</h2>
+          <p style="color:rgba(255,255,255,.82); max-width:52ch;">Curadoria de destinos, melhores épocas, ideias de roteiro e novidades da Maré direto no seu e-mail.</p>
         </div>
         <div style="background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); border-radius:var(--radius-xl); padding:var(--space-6); backdrop-filter: blur(8px);">
           <form id="newsletter-home" style="display:grid; gap:var(--space-3);">
-            <input type="email" id="newsletter-input" placeholder="seu@email.com" id="i18n-nl_ph" required style="width:100%; min-height:48px; border:none; border-radius:999px; padding:0 1rem; font:inherit; background:white; color:#123042;">
-            <button type="submit" class="btn" style="background:white; color:var(--color-primary); font-weight:700;" id="newsletter-btn"><span id="i18n-nl_btn">Quero receber 🌊</span></button>
+            <input type="email" id="newsletter-input" placeholder="seu@email.com" required style="width:100%; min-height:48px; border:none; border-radius:999px; padding:0 1rem; font:inherit; background:white; color:#123042;">
+            <button type="submit" class="btn" style="background:white; color:var(--color-primary); font-weight:700;" id="newsletter-btn">Quero receber 🌊</button>
           </form>
           <p id="newsletter-home-success" style="display:none; margin-top:1rem; color:white; font-size:var(--text-sm);">🎉 Perfeito. Você entrou na lista da Maré.</p>
         </div>
@@ -395,7 +405,7 @@
   <text x="0" y="26" font-family="Georgia, serif" font-size="28" font-weight="500" fill="#0B4D6B" letter-spacing="-0.5">Maré</text>
   <path d="M2 32c8 0 8-2.5 16-2.5S26 32 34 32s8-2.5 16-2.5S58 32 66 32" stroke="#1A8FA0" stroke-width="1.5" stroke-linecap="round"/>
 </svg></div>
-        <p><span id="i18n-footer_desc">Curadoria de surf travel no Brasil, feita para escolher a próxima trip sem pressa.</span></p>
+        <p>Curadoria de surf travel no Brasil, feita para escolher a próxima trip sem pressa.</p>
       </div>
       <div class="footer-mascot">
         <p>🐾 Tatui aprova rotas com areia, mar e vento no ponto certo.</p>
@@ -406,39 +416,37 @@
   
 <script>
 (function(){
-  var T={"pt": {"nav_home": "Home", "nav_dest": "Destinos", "nav_sobre": "Curadoria", "hero_eyebrow": "Curadoria de surf travel", "hero_title": "Encontre sua próxima surf trip no Brasil", "hero_sub": "Destinos selecionados para quem surfa e viaja com intenção. Sem lista genérica — só o que vale a pena.", "hero_cta": "Explorar destinos", "hero_cta2": "Sobre a Maré", "dest_eyebrow": "Onde surfar", "dest_title": "Destinos", "nl_eyebrow": "Newsletter Maré", "nl_title": "Receba novas surf trips antes de todo mundo", "nl_desc": "Curadoria de destinos, melhores épocas, ideias de roteiro e novidades da Maré direto no seu e-mail.", "nl_ph": "seu@email.com", "nl_btn": "Quero receber 🌊", "about_eyebrow": "Sobre a Maré", "about_title": "Feita para quem surfa com intenção", "about_text": "A Maré nasceu da vontade de simplificar a escolha da próxima surf trip. Sem listas genéricas, sem patrocínio de resort. Só curadoria honesta de quem conhece o mar.", "footer_desc": "Curadoria de surf travel no Brasil, feita para escolher a próxima trip sem pressa.", "back": "← Todos os destinos", "map_eyebrow": "Mapa dos picos", "map_title": "Onde surfar", "map_desc": "Clique em um pico para voar até ele no mapa.", "other_title": "Outros destinos", "nl_side_title": "Fique por dentro", "nl_side_desc": "Receba curadoria de destinos e dicas de trip antes de todo mundo."}, "en": {"nav_home": "Home", "nav_dest": "Destinations", "nav_sobre": "Curation", "hero_eyebrow": "Surf travel curation", "hero_title": "Find your next surf trip in Brazil", "hero_sub": "Handpicked destinations for surfers who travel with intention. No generic lists — only what's worth it.", "hero_cta": "Explore destinations", "hero_cta2": "About Maré", "dest_eyebrow": "Where to surf", "dest_title": "Destinations", "nl_eyebrow": "Maré Newsletter", "nl_title": "Get new surf trips before everyone else", "nl_desc": "Destination curation, best seasons, itinerary ideas and Maré news straight to your inbox.", "nl_ph": "your@email.com", "nl_btn": "Sign me up 🌊", "about_eyebrow": "About Maré", "about_title": "Built for surfers who travel with intention", "about_text": "Maré was born from the desire to simplify choosing the next surf trip. No generic lists, no resort sponsorship. Just honest curation from people who know the ocean.", "footer_desc": "Surf travel curation in Brazil, made to choose your next trip without rushing.", "back": "← All destinations", "map_eyebrow": "Surf spots map", "map_title": "Where to surf", "map_desc": "Click a spot to fly to it on the map.", "other_title": "Other destinations", "nl_side_title": "Stay in the loop", "nl_side_desc": "Get destination curation and trip tips before everyone else."}, "es": {"nav_home": "Inicio", "nav_dest": "Destinos", "nav_sobre": "Curaduría", "hero_eyebrow": "Curaduría de surf travel", "hero_title": "Encuentra tu próximo surf trip en Brasil", "hero_sub": "Destinos seleccionados para quienes surfean y viajan con intención. Sin listas genéricas — solo lo que vale la pena.", "hero_cta": "Explorar destinos", "hero_cta2": "Sobre Maré", "dest_eyebrow": "Dónde surfear", "dest_title": "Destinos", "nl_eyebrow": "Newsletter Maré", "nl_title": "Recibe nuevos surf trips antes que todos", "nl_desc": "Curaduría de destinos, mejores épocas, ideas de itinerario y novedades de Maré directo a tu correo.", "nl_ph": "tu@email.com", "nl_btn": "Quiero recibir 🌊", "about_eyebrow": "Sobre Maré", "about_title": "Hecha para quienes surfean con intención", "about_text": "Maré nació del deseo de simplificar la elección del próximo surf trip. Sin listas genéricas, sin patrocinio de resorts. Solo curaduría honesta de quienes conocen el mar.", "footer_desc": "Curaduría de surf travel en Brasil, hecha para elegir el próximo viaje sin prisa.", "back": "← Todos los destinos", "map_eyebrow": "Mapa de picos", "map_title": "Dónde surfear", "map_desc": "Haz clic en un pico para volar hasta él en el mapa.", "other_title": "Otros destinos", "nl_side_title": "Mantente al día", "nl_side_desc": "Recibe curaduría de destinos y consejos de viaje antes que todos."}};
-  function q(id){return document.getElementById(id);}
-  function setText(id,v){var e=q(id);if(e&&v!==undefined)e.textContent=v;}
-  function setPlaceholder(id,v){var e=q(id);if(e&&v!==undefined)e.placeholder=v;}
-  function applyT(lang){
-    var t=T[lang]||T['pt'];
-    var keys=['nav_home','nav_dest','nav_sobre','hero_eyebrow','hero_title','hero_sub','hero_cta','hero_cta2','dest_eyebrow','dest_title','nl_eyebrow','nl_title','nl_desc','nl_btn','about_eyebrow','about_title','about_text','footer_desc','back','map_eyebrow','map_title','map_desc','other_title','nl_side_title','nl_side_desc'];
-    keys.forEach(function(k){setText('i18n-'+k,t[k]);});
-    setPlaceholder('i18n-nl_ph',t['nl_ph']);
-    setPlaceholder('i18n-nl_side_ph',t['nl_ph']);
-    if(q('lang-flag'))q('lang-flag').textContent=({pt:'🇧🇷',en:'🇺🇸',es:'🇪🇸'})[lang];
-    if(q('lang-code'))q('lang-code').textContent=lang.toUpperCase();
-    localStorage.setItem('mare_lang',lang);
-    document.documentElement.lang=lang==='pt'?'pt-BR':lang;
+  var T = {"pt": {"hero": "<div>\n          <span class=\"eyebrow\">Curadoria de surf no Brasil</span>\n          <h1>A próxima surf trip começa quando a maré encaixa com você.</h1>\n          <p>A Maré organiza destinos brasileiros com linguagem simples, contexto real de viagem e clima de descoberta. Menos ruído, mais sensação de \"esse lugar é a minha cara\".</p>\n          <div class=\"hero-actions\">\n            <a class=\"btn btn-primary\" href=\"#destinos\">Ver destinos</a>\n            <a class=\"btn btn-soft\" href=\"#sobre\">Sobre a Maré</a>\n          </div>\n        </div>", "newsletter": "<div class=\"container\" style=\"display:grid; grid-template-columns:1.1fr .9fr; gap:var(--space-8); align-items:center;\">\n        <div>\n          <span class=\"eyebrow\" id=\"newsletter-eyebrow\">Newsletter Maré</span>\n          <h2>Receba novas surf trips antes de todo mundo</h2>\n          <p>Curadoria de destinos, melhores épocas, ideias de roteiro e novidades da Maré direto no seu e-mail.</p>\n        </div>\n        <div style=\"background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); border-radius:var(--radius-xl); padding:var(--space-6); backdrop-filter: blur(8px);\">\n          <form id=\"newsletter-home\" style=\"display:grid; gap:var(--space-3);\">\n            <input type=\"email\" placeholder=\"seu@email.com\" required style=\"width:100%; min-height:48px; border:none; border-radius:999px; padding:0 1rem; font:inherit; background:white; color:#123042;\">\n            <button type=\"submit\" class=\"btn\" style=\"background:white; color:var(--color-primary); font-weight:700;\">Quero receber 🌊</button>\n          </form>\n          <p id=\"newsletter-home-success\" style=\"display:none; margin-top:1rem; color:white; font-size:var(--text-sm);\">🎉 Perfeito. Você entrou na lista da Maré.</p>\n        </div>\n      </div>", "footer": null}, "en": {"hero": "<div>\n          <span class=\"eyebrow\">Surf travel curation in Brazil</span>\n          <h1>Your next surf trip starts when the tide aligns with you.</h1>\n          <p>Maré curates Brazilian surf destinations with simple language, real travel context and a sense of discovery. Less noise, more \"this place is so me\".</p>\n          <div class=\"hero-actions\">\n            <a class=\"btn btn-primary\" href=\"#destinos\">See destinations</a>\n            <a class=\"btn btn-soft\" href=\"#sobre\">About Maré</a>\n          </div>\n        </div>", "newsletter": "<div class=\"container\" style=\"display:grid; grid-template-columns:1.1fr .9fr; gap:var(--space-8); align-items:center;\">\n        <div>\n          <span class=\"eyebrow\">Maré Newsletter</span>\n          <h2>Get new surf trips before everyone else</h2>\n          <p>Destination curation, best seasons, itinerary ideas and Maré news straight to your inbox.</p>\n        </div>\n        <div style=\"background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); border-radius:var(--radius-xl); padding:var(--space-6); backdrop-filter: blur(8px);\">\n          <form id=\"newsletter-home\" style=\"display:grid; gap:var(--space-3);\">\n            <input type=\"email\" placeholder=\"your@email.com\" required style=\"width:100%; min-height:48px; border:none; border-radius:999px; padding:0 1rem; font:inherit; background:white; color:#123042;\">\n            <button type=\"submit\" class=\"btn\" style=\"background:white; color:var(--color-primary); font-weight:700;\">Sign me up 🌊</button>\n          </form>\n          <p id=\"newsletter-home-success\" style=\"display:none; margin-top:1rem; color:white; font-size:var(--text-sm);\">🎉 Nice. You&apos;re on the Maré list.</p>\n        </div>\n      </div>", "footer": null}, "es": {"hero": "<div>\n          <span class=\"eyebrow\">Curaduría de surf travel en Brasil</span>\n          <h1>Tu próximo surf trip empieza cuando la marea encaja contigo.</h1>\n          <p>Maré organiza destinos brasileños con lenguaje simple, contexto real de viaje y clima de descubrimiento. Menos ruido, más sensación de \"este lugar es para mí\".</p>\n          <div class=\"hero-actions\">\n            <a class=\"btn btn-primary\" href=\"#destinos\">Ver destinos</a>\n            <a class=\"btn btn-soft\" href=\"#sobre\">Sobre Maré</a>\n          </div>\n        </div>", "newsletter": "<div class=\"container\" style=\"display:grid; grid-template-columns:1.1fr .9fr; gap:var(--space-8); align-items:center;\">\n        <div>\n          <span class=\"eyebrow\">Newsletter Maré</span>\n          <h2>Recibe nuevos surf trips antes que todos</h2>\n          <p>Curaduría de destinos, mejores épocas, ideas de itinerario y novedades de Maré directo a tu correo.</p>\n        </div>\n        <div style=\"background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); border-radius:var(--radius-xl); padding:var(--space-6); backdrop-filter: blur(8px);\">\n          <form id=\"newsletter-home\" style=\"display:grid; gap:var(--space-3);\">\n            <input type=\"email\" placeholder=\"tu@email.com\" required style=\"width:100%; min-height:48px; border:none; border-radius:999px; padding:0 1rem; font:inherit; background:white; color:#123042;\">\n            <button type=\"submit\" class=\"btn\" style=\"background:white; color:var(--color-primary); font-weight:700;\">Quiero recibir 🌊</button>\n          </form>\n          <p id=\"newsletter-home-success\" style=\"display:none; margin-top:1rem; color:white; font-size:var(--text-sm);\">🎉 Perfecto. Estás en la lista de Maré.</p>\n        </div>\n      </div>", "footer": null}};
+  function setLang(lang){
+    var hero = document.querySelector('[data-block="hero"]');
+    var nl = document.querySelector('[data-block="newsletter"]');
+    var pack = T[lang] || T.pt;
+    if(hero && pack.hero){ hero.innerHTML = pack.hero; }
+    if(nl && pack.newsletter){ nl.innerHTML = pack.newsletter; }
+    var flag = document.getElementById('lang-flag');
+    var code = document.getElementById('lang-code');
+    if(flag) flag.textContent = lang === 'pt' ? '🇧🇷' : (lang === 'en' ? '🇺🇸' : '🇪🇸');
+    if(code) code.textContent = lang.toUpperCase();
+    localStorage.setItem('mare_lang', lang);
   }
-  var btn=q('lang-btn'), dd=q('lang-dropdown');
-  if(btn&&dd){
-    btn.addEventListener('click',function(e){
+  var btn = document.getElementById('lang-btn');
+  var dd = document.getElementById('lang-dropdown');
+  if(btn && dd){
+    btn.addEventListener('click', function(e){
       e.stopPropagation();
-      dd.style.display=dd.style.display==='none'?'block':'none';
+      dd.style.display = dd.style.display === 'block' ? 'none' : 'block';
     });
-    document.addEventListener('click',function(){if(dd)dd.style.display='none';});
+    document.addEventListener('click', function(){ dd.style.display = 'none'; });
     document.querySelectorAll('.lopt').forEach(function(o){
-      o.addEventListener('click',function(e){
+      o.addEventListener('click', function(e){
         e.stopPropagation();
-        applyT(o.getAttribute('data-l'));
-        dd.style.display='none';
+        setLang(o.getAttribute('data-l'));
+        dd.style.display = 'none';
       });
     });
   }
-  // Only restore saved lang — NEVER auto-detect browser lang
-  var saved=localStorage.getItem('mare_lang');
-  if(saved&&T[saved])applyT(saved);
+  var saved = localStorage.getItem('mare_lang');
+  if(saved && T[saved]) setLang(saved);
 })();
 </script>
 </body>
