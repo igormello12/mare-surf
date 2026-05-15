@@ -157,21 +157,11 @@
       </nav>
       <div class="header-actions">
         
-        <div class="lang-selector" style="position:relative;">
-          <button id="lang-btn" type="button" aria-haspopup="listbox" style="display:flex;align-items:center;gap:.35rem;background:transparent;border:1.5px solid rgba(255,255,255,.2);border-radius:999px;padding:.3rem .7rem;cursor:pointer;font:inherit;font-size:.82rem;font-weight:600;color:var(--color-text);transition:border-color 150ms;">
-            <span id="lang-flag">🇧🇷</span><span id="lang-code">PT</span>
-            <svg width="9" height="6" viewBox="0 0 9 6"><path d="M1 1l3.5 3.5L8 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
-          </button>
-          <ul id="lang-dropdown" role="listbox" style="display:none;position:absolute;top:calc(100% + 6px);right:0;list-style:none;margin:0;padding:4px;background:var(--color-surface-2, #1a2f3e);border:1px solid var(--color-border,rgba(255,255,255,.12));border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.25);min-width:140px;z-index:9999;">
-            <li><button class="lopt" data-l="pt" data-f="🇧🇷" data-c="PT" type="button" style="display:flex;align-items:center;gap:8px;width:100%;padding:8px 12px;background:none;border:none;border-radius:8px;cursor:pointer;font:inherit;font-size:.88rem;color:var(--color-text,#e8f4f8);">🇧🇷 Português</button></li>
-            <li><button class="lopt" data-l="en" data-f="🇺🇸" data-c="EN" type="button" style="display:flex;align-items:center;gap:8px;width:100%;padding:8px 12px;background:none;border:none;border-radius:8px;cursor:pointer;font:inherit;font-size:.88rem;color:var(--color-text,#e8f4f8);">🇺🇸 English</button></li>
-            <li><button class="lopt" data-l="es" data-f="🇪🇸" data-c="ES" type="button" style="display:flex;align-items:center;gap:8px;width:100%;padding:8px 12px;background:none;border:none;border-radius:8px;cursor:pointer;font:inherit;font-size:.88rem;color:var(--color-text,#e8f4f8);">🇪🇸 Español</button></li>
-          </ul>
-        </div>
+        
         <button class="theme-toggle" type="button" data-theme-toggle aria-label="Alternar tema">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
-        <a class="nav-back" href="index.html"><span id="back-link"><span id="i18n-back">← Todos os destinos</span></span></a>
+        <a class="nav-back" href="index.html"><span id="back-link">← Todos os destinos</span></a>
       </div>
     </div>
   </header>
@@ -257,8 +247,8 @@
     <section class="section" id="mapa" style="background:var(--color-surface);border-top:1px solid var(--color-divider);">
       <div class="container">
         <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:1.5rem;flex-wrap:wrap;gap:1rem;">
-          <div><span class="eyebrow" id="map-eyebrow"><span id="i18n-map_eyebrow">Mapa dos picos</span></span><h2 style="margin-top:.75rem;margin-bottom:0;" id="map-title"><span id="i18n-map_title">Onde surfar</span></h2></div>
-          <p style="color:var(--color-text-muted);max-width:46ch;margin:0;" id="map-desc"><span id="i18n-map_desc">Clique em um pico para voar até ele no mapa.</span></p>
+          <div><span class="eyebrow" id="map-eyebrow">Mapa dos picos</span><h2 style="margin-top:.75rem;margin-bottom:0;" id="map-title">Onde surfar</h2></div>
+          <p style="color:var(--color-text-muted);max-width:46ch;margin:0;" id="map-desc">Clique em um pico para voar até ele no mapa.</p>
         </div>
         <div class="map-grid" style="display:grid;grid-template-columns:.3fr 1fr;gap:1.25rem;align-items:start;">
           <div class="pico-list-wrap" style="display:grid;gap:.6rem;">
@@ -294,42 +284,5 @@
       </div>
     </section>
 
-<script>
-(function(){
-  var T={"pt": {"nav_home": "Home", "nav_dest": "Destinos", "nav_sobre": "Curadoria", "hero_eyebrow": "Curadoria de surf travel", "hero_title": "Encontre sua próxima surf trip no Brasil", "hero_sub": "Destinos selecionados para quem surfa e viaja com intenção. Sem lista genérica — só o que vale a pena.", "hero_cta": "Explorar destinos", "hero_cta2": "Sobre a Maré", "dest_eyebrow": "Onde surfar", "dest_title": "Destinos", "nl_eyebrow": "Newsletter Maré", "nl_title": "Receba novas surf trips antes de todo mundo", "nl_desc": "Curadoria de destinos, melhores épocas, ideias de roteiro e novidades da Maré direto no seu e-mail.", "nl_ph": "seu@email.com", "nl_btn": "Quero receber 🌊", "about_eyebrow": "Sobre a Maré", "about_title": "Feita para quem surfa com intenção", "about_text": "A Maré nasceu da vontade de simplificar a escolha da próxima surf trip. Sem listas genéricas, sem patrocínio de resort. Só curadoria honesta de quem conhece o mar.", "footer_desc": "Curadoria de surf travel no Brasil, feita para escolher a próxima trip sem pressa.", "back": "← Todos os destinos", "map_eyebrow": "Mapa dos picos", "map_title": "Onde surfar", "map_desc": "Clique em um pico para voar até ele no mapa.", "other_title": "Outros destinos", "nl_side_title": "Fique por dentro", "nl_side_desc": "Receba curadoria de destinos e dicas de trip antes de todo mundo."}, "en": {"nav_home": "Home", "nav_dest": "Destinations", "nav_sobre": "Curation", "hero_eyebrow": "Surf travel curation", "hero_title": "Find your next surf trip in Brazil", "hero_sub": "Handpicked destinations for surfers who travel with intention. No generic lists — only what's worth it.", "hero_cta": "Explore destinations", "hero_cta2": "About Maré", "dest_eyebrow": "Where to surf", "dest_title": "Destinations", "nl_eyebrow": "Maré Newsletter", "nl_title": "Get new surf trips before everyone else", "nl_desc": "Destination curation, best seasons, itinerary ideas and Maré news straight to your inbox.", "nl_ph": "your@email.com", "nl_btn": "Sign me up 🌊", "about_eyebrow": "About Maré", "about_title": "Built for surfers who travel with intention", "about_text": "Maré was born from the desire to simplify choosing the next surf trip. No generic lists, no resort sponsorship. Just honest curation from people who know the ocean.", "footer_desc": "Surf travel curation in Brazil, made to choose your next trip without rushing.", "back": "← All destinations", "map_eyebrow": "Surf spots map", "map_title": "Where to surf", "map_desc": "Click a spot to fly to it on the map.", "other_title": "Other destinations", "nl_side_title": "Stay in the loop", "nl_side_desc": "Get destination curation and trip tips before everyone else."}, "es": {"nav_home": "Inicio", "nav_dest": "Destinos", "nav_sobre": "Curaduría", "hero_eyebrow": "Curaduría de surf travel", "hero_title": "Encuentra tu próximo surf trip en Brasil", "hero_sub": "Destinos seleccionados para quienes surfean y viajan con intención. Sin listas genéricas — solo lo que vale la pena.", "hero_cta": "Explorar destinos", "hero_cta2": "Sobre Maré", "dest_eyebrow": "Dónde surfear", "dest_title": "Destinos", "nl_eyebrow": "Newsletter Maré", "nl_title": "Recibe nuevos surf trips antes que todos", "nl_desc": "Curaduría de destinos, mejores épocas, ideas de itinerario y novedades de Maré directo a tu correo.", "nl_ph": "tu@email.com", "nl_btn": "Quiero recibir 🌊", "about_eyebrow": "Sobre Maré", "about_title": "Hecha para quienes surfean con intención", "about_text": "Maré nació del deseo de simplificar la elección del próximo surf trip. Sin listas genéricas, sin patrocinio de resorts. Solo curaduría honesta de quienes conocen el mar.", "footer_desc": "Curaduría de surf travel en Brasil, hecha para elegir el próximo viaje sin prisa.", "back": "← Todos los destinos", "map_eyebrow": "Mapa de picos", "map_title": "Dónde surfear", "map_desc": "Haz clic en un pico para volar hasta él en el mapa.", "other_title": "Otros destinos", "nl_side_title": "Mantente al día", "nl_side_desc": "Recibe curaduría de destinos y consejos de viaje antes que todos."}};
-  function q(id){return document.getElementById(id);}
-  function setText(id,v){var e=q(id);if(e&&v!==undefined)e.textContent=v;}
-  function setPlaceholder(id,v){var e=q(id);if(e&&v!==undefined)e.placeholder=v;}
-  function applyT(lang){
-    var t=T[lang]||T['pt'];
-    var keys=['nav_home','nav_dest','nav_sobre','hero_eyebrow','hero_title','hero_sub','hero_cta','hero_cta2','dest_eyebrow','dest_title','nl_eyebrow','nl_title','nl_desc','nl_btn','about_eyebrow','about_title','about_text','footer_desc','back','map_eyebrow','map_title','map_desc','other_title','nl_side_title','nl_side_desc'];
-    keys.forEach(function(k){setText('i18n-'+k,t[k]);});
-    setPlaceholder('i18n-nl_ph',t['nl_ph']);
-    setPlaceholder('i18n-nl_side_ph',t['nl_ph']);
-    if(q('lang-flag'))q('lang-flag').textContent=({pt:'🇧🇷',en:'🇺🇸',es:'🇪🇸'})[lang];
-    if(q('lang-code'))q('lang-code').textContent=lang.toUpperCase();
-    localStorage.setItem('mare_lang',lang);
-    document.documentElement.lang=lang==='pt'?'pt-BR':lang;
-  }
-  var btn=q('lang-btn'), dd=q('lang-dropdown');
-  if(btn&&dd){
-    btn.addEventListener('click',function(e){
-      e.stopPropagation();
-      dd.style.display=dd.style.display==='none'?'block':'none';
-    });
-    document.addEventListener('click',function(){if(dd)dd.style.display='none';});
-    document.querySelectorAll('.lopt').forEach(function(o){
-      o.addEventListener('click',function(e){
-        e.stopPropagation();
-        applyT(o.getAttribute('data-l'));
-        dd.style.display='none';
-      });
-    });
-  }
-  // Only restore saved lang — NEVER auto-detect browser lang
-  var saved=localStorage.getItem('mare_lang');
-  if(saved&&T[saved])applyT(saved);
-})();
-</script>
 </body>
 </html>
