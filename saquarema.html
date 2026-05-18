@@ -156,12 +156,21 @@
         </ul>
       </nav>
       <div class="header-actions">
-        
-        
+        <div class="lang-selector" style="position:relative;">
+          <button id="lang-btn" type="button" aria-haspopup="listbox" style="display:flex;align-items:center;gap:.35rem;background:transparent;border:1.5px solid rgba(255,255,255,.2);border-radius:999px;padding:.3rem .7rem;cursor:pointer;font:inherit;font-size:.82rem;font-weight:600;color:var(--color-text);transition:border-color 150ms;">
+            <span id="lang-flag">🇧🇷</span><span id="lang-code">PT</span>
+            <svg width="9" height="6" viewBox="0 0 9 6"><path d="M1 1l3.5 3.5L8 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+          </button>
+          <ul id="lang-dropdown" role="listbox" style="display:none;position:absolute;top:calc(100% + 6px);right:0;list-style:none;margin:0;padding:4px;background:var(--color-surface-2);border:1px solid var(--color-border);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.25);min-width:140px;z-index:9999;">
+            <li><button class="lopt" data-l="pt" type="button" style="display:flex;align-items:center;gap:8px;width:100%;padding:8px 12px;background:none;border:none;border-radius:8px;cursor:pointer;font:inherit;font-size:.88rem;color:var(--color-text);">🇧🇷 Português</button></li>
+            <li><button class="lopt" data-l="en" type="button" style="display:flex;align-items:center;gap:8px;width:100%;padding:8px 12px;background:none;border:none;border-radius:8px;cursor:pointer;font:inherit;font-size:.88rem;color:var(--color-text);">🇺🇸 English</button></li>
+            <li><button class="lopt" data-l="es" type="button" style="display:flex;align-items:center;gap:8px;width:100%;padding:8px 12px;background:none;border:none;border-radius:8px;cursor:pointer;font:inherit;font-size:.88rem;color:var(--color-text);">🇪🇸 Español</button></li>
+          </ul>
+        </div>
         <button class="theme-toggle" type="button" data-theme-toggle aria-label="Alternar tema">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
         </button>
-        <a class="nav-back" href="index.html"><span id="back-link">← Todos os destinos</span></a>
+        <a class="nav-cta btn" href="#destinos">Explorar picos</a>
       </div>
     </div>
   </header>
